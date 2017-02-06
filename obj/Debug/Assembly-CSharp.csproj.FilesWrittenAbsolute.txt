@@ -1,0 +1,17 @@
+/Users/stevenlucianto/Documents/Unity Projects/URECA/Temp/bin/Debug/Assembly-CSharp.dll.mdb
+/Users/stevenlucianto/Documents/Unity Projects/URECA/Temp/bin/Debug/Assembly-CSharp.dll
+/Users/stevenlucianto/Documents/Unity Projects/URECA/obj/Debug/Assembly-CSharp.dll
+/Users/stevenlucianto/Documents/Unity Projects/URECA/obj/Debug/Assembly-CSharp.dll.mdb
+/Users/stevenlucianto/Documents/Unity Projects/URECA/Temp/bin/Debug/UnityEngine.dll
+/Users/stevenlucianto/Documents/Unity Projects/URECA/Temp/bin/Debug/UnityEditor.dll
+/Users/stevenlucianto/Documents/Unity Projects/URECA/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/stevenlucianto/Documents/Unity Projects/URECA/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/stevenlucianto/Documents/Unity Projects/URECA/Temp/bin/Debug/Mono.Cecil.dll
+/Users/stevenlucianto/Documents/Unity Projects/URECA/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/stevenlucianto/Documents/Unity Projects/URECA/Temp/bin/Debug/Unity.DataContract.dll
+/Users/stevenlucianto/Documents/Unity Projects/URECA/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/stevenlucianto/Documents/Unity Projects/URECA/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/stevenlucianto/Documents/Unity Projects/URECA/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/stevenlucianto/Documents/Unity Projects/URECA/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/stevenlucianto/Documents/Unity Projects/URECA/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/stevenlucianto/Documents/Unity Projects/URECA/Temp/bin/Debug/Mono.Cecil.Mdb.dll

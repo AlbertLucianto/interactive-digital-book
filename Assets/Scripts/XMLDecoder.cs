@@ -16,8 +16,9 @@ namespace URECA
 
 		public static void getData(string xmlPath){
 			var settings = new XmlReaderSettings ();
+			settings.ProhibitDtd = false;
 			settings.ValidationType = ValidationType.DTD;
-			settings.DtdProcessing = DtdProcessing.Parse;
+			//settings.DtdProcessing = DtdProcessing.Parse;
 			settings.ValidationEventHandler += new System.Xml.Schema.ValidationEventHandler (ValidationCallBack);
 			//Console.WriteLine(settings.IgnoreProcessingInstructions);
 			settings.IgnoreWhitespace = true;

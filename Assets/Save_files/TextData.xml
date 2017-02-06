@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<!DOCTYPE page SYSTEM "PageSchema.dtd">
-<!--DOCTYPE page [
+<!--DOCTYPE page SYSTEM "PageSchema.dtd"-->
+<!DOCTYPE page [
 <!ELEMENT page ANY>
 
 <!ELEMENT text (content+, text*)>
@@ -8,20 +8,41 @@
 <!ATTLIST text fontStyle CDATA "Regular">
 <!ATTLIST text fontSize CDATA "16">
 <!ATTLIST text kerning CDATA "0">
-<!ATTLIST text lineSpace CDATA "2">
+<!ATTLIST text lineSpace CDATA "0">
+<!ATTLIST text top CDATA "0">
+<!ATTLIST text bottom CDATA "0">
+<!ATTLIST text left CDATA "0">
+<!ATTLIST text right CDATA "0">
 <!ELEMENT content (#PCDATA)>
 
 <!ELEMENT image (source, description?)>
 <!ELEMENT source EMPTY>
 <!ELEMENT description (#PCDATA)>
 <!ATTLIST image id ID #IMPLIED>
-<!ATTLIST image height CDATA #REQUIRED>
-<!ATTLIST image width CDATA #REQUIRED>
+<!ATTLIST image height CDATA "0">
+<!ATTLIST image width CDATA "0">
 <!ATTLIST image top CDATA "0">
 <!ATTLIST image bottom CDATA "0">
 <!ATTLIST image left CDATA "0">
 <!ATTLIST image right CDATA "0">
-]-->
+<!ATTLIST source href CDATA #REQUIRED>
+
+<!ELEMENT video (source, description?)>
+<!ATTLIST video id ID #IMPLIED>
+<!ATTLIST video height CDATA "0" width CDATA "0">
+<!ATTLIST video top CDATA "0">
+<!ATTLIST video bottom CDATA "0">
+<!ATTLIST video left CDATA "0">
+<!ATTLIST video right CDATA "0">
+
+<!ELEMENT model (source, description?)>
+<!ATTLIST model id ID #IMPLIED>
+<!ATTLIST model height CDATA "0" width CDATA "0">
+<!ATTLIST model top CDATA  "0">
+<!ATTLIST model bottom CDATA  "0">
+<!ATTLIST model left CDATA  "0">
+<!ATTLIST model right CDATA  "0">
+]>
 
 <page>
 	<text>
@@ -31,7 +52,7 @@
 		<content>I am currently studying Computer Science</content>
 	</text>
 	<image height="10" width="5" top="2" bottom="2" left="1" right="1">
-		<source href="Santai_Logo_Export_Bg_Red_MAIN.png"> </source>
+		<source href="ImageTest.png"> </source>
 		<description>Picture of Albert</description>
 	</image>
 	<video height="15" width="30">
