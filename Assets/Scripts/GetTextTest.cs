@@ -6,20 +6,21 @@ namespace URECA
 {
 	public class GetTextTest : MonoBehaviour {
 
-		public Text contentText;
-		private TextXML content;
+		private Text textUnity;
+		private TextXML textXML;
 
-		// Use this for initialization
-		void Start () {
-	
-		}
+        // Use this for initialization
+        void Start()
+        {
+            textUnity = GetComponent<Text>();
+        }
 
 		// Update is called once per frame
 		void Update () {
 			XMLDecoder.getData ("Assets/Save_files/TextData.xml");
-			content = (TextXML) XMLDecoder.accessData ()[0];
+			textXML = (TextXML) XMLDecoder.accessData ()[1];
 
-			contentText.text = content.getFontFamily();
+			textUnity.text = textXML.getContent();
 		}
 	}
 }
