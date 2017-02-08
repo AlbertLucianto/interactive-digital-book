@@ -49,10 +49,13 @@
 		<content>Hello my name is Albert</content>
 	</text>
 	<text fontFamily="Avenir Next" fontStyle="Regular" fontSize="8" kerning="0" lineSpace="15">
-		<content>I am currently studying Computer Science</content>
+		<content>
+    Hello my name is Keefe.
+    I am currently studying Computer Science.
+    </content>
 	</text>
 	<image height="10" width="5" top="2" bottom="2" left="1" right="1">
-		<source href="https://www.smashingmagazine.com/wp-content/uploads/2015/06/10-dithering-opt.jpg"> </source>
+		<source href="http://www.menucool.com/slider/jsImgSlider/images/image-slider-2.jpg"> </source>
 		<description>Picture of Albert</description>
 	</image>
 	<video height="15" width="30">
