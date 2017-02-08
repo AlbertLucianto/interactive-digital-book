@@ -55,7 +55,7 @@
     </content>
 	</text>
 	<image height="10" width="5" top="2" bottom="2" left="1" right="1">
-		<source href="http://www.menucool.com/slider/jsImgSlider/images/image-slider-2.jpg"> </source>
+		<source href="Assets\Materials\image1.jpg"></source>
 		<description>Picture of Albert</description>
 	</image>
 	<video height="15" width="30">
