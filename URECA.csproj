@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\AssemblyInfo.cs" />
+    <Compile Include="Assets\Scripts\Get3DmodelTest.cs" />
     <Compile Include="Assets\Scripts\GetImageTest.cs" />
     <Compile Include="Assets\Scripts\GetTextTest.cs" />
     <Compile Include="Assets\Scripts\ImageXML.cs" />

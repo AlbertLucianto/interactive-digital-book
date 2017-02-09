@@ -1,0 +1,224 @@
+fileFormatVersion: 2
+guid: 336d94b110065f74f87b0853f17e2adf
+timeCreated: 1486606159
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: petronas_layer1
+    100004: petronas_layer10
+    100006: petronas_layer10_MeshPart0
+    100008: petronas_layer10_MeshPart1
+    100010: petronas_layer10_MeshPart2
+    100012: petronas_layer10_MeshPart3
+    100014: petronas_layer10_MeshPart4
+    100016: petronas_layer10_MeshPart5
+    100018: petronas_layer1_MeshPart0
+    100020: petronas_layer1_MeshPart1
+    100022: petronas_layer1_MeshPart2
+    100024: petronas_layer2
+    100026: petronas_layer3
+    100028: petronas_layer5
+    100030: petronas_layer6
+    100032: petronas_layer6_MeshPart0
+    100034: petronas_layer6_MeshPart1
+    100036: petronas_layer7
+    100038: petronas_layer7_MeshPart0
+    100040: petronas_layer7_MeshPart1
+    100042: petronas_layer7_MeshPart2
+    100044: petronas_layer7_MeshPart3
+    100046: petronas_layer7_MeshPart4
+    100048: petronas_layer7_MeshPart5
+    100050: petronas_layer8
+    100052: petronas_layer8_MeshPart0
+    100054: petronas_layer8_MeshPart1
+    100056: petronas_layer8_MeshPart2
+    100058: petronas_layer8_MeshPart3
+    100060: petronas_layer9
+    100062: petronas_layer9_MeshPart0
+    100064: petronas_layer9_MeshPart1
+    100066: petronas_layer9_MeshPart2
+    400000: //RootNode
+    400002: petronas_layer1
+    400004: petronas_layer10
+    400006: petronas_layer10_MeshPart0
+    400008: petronas_layer10_MeshPart1
+    400010: petronas_layer10_MeshPart2
+    400012: petronas_layer10_MeshPart3
+    400014: petronas_layer10_MeshPart4
+    400016: petronas_layer10_MeshPart5
+    400018: petronas_layer1_MeshPart0
+    400020: petronas_layer1_MeshPart1
+    400022: petronas_layer1_MeshPart2
+    400024: petronas_layer2
+    400026: petronas_layer3
+    400028: petronas_layer5
+    400030: petronas_layer6
+    400032: petronas_layer6_MeshPart0
+    400034: petronas_layer6_MeshPart1
+    400036: petronas_layer7
+    400038: petronas_layer7_MeshPart0
+    400040: petronas_layer7_MeshPart1
+    400042: petronas_layer7_MeshPart2
+    400044: petronas_layer7_MeshPart3
+    400046: petronas_layer7_MeshPart4
+    400048: petronas_layer7_MeshPart5
+    400050: petronas_layer8
+    400052: petronas_layer8_MeshPart0
+    400054: petronas_layer8_MeshPart1
+    400056: petronas_layer8_MeshPart2
+    400058: petronas_layer8_MeshPart3
+    400060: petronas_layer9
+    400062: petronas_layer9_MeshPart0
+    400064: petronas_layer9_MeshPart1
+    400066: petronas_layer9_MeshPart2
+    2300000: petronas_layer10_MeshPart0
+    2300002: petronas_layer10_MeshPart1
+    2300004: petronas_layer10_MeshPart2
+    2300006: petronas_layer10_MeshPart3
+    2300008: petronas_layer10_MeshPart4
+    2300010: petronas_layer10_MeshPart5
+    2300012: petronas_layer1_MeshPart0
+    2300014: petronas_layer1_MeshPart1
+    2300016: petronas_layer1_MeshPart2
+    2300018: petronas_layer2
+    2300020: petronas_layer3
+    2300022: petronas_layer5
+    2300024: petronas_layer6_MeshPart0
+    2300026: petronas_layer6_MeshPart1
+    2300028: petronas_layer7_MeshPart0
+    2300030: petronas_layer7_MeshPart1
+    2300032: petronas_layer7_MeshPart2
+    2300034: petronas_layer7_MeshPart3
+    2300036: petronas_layer7_MeshPart4
+    2300038: petronas_layer7_MeshPart5
+    2300040: petronas_layer8_MeshPart0
+    2300042: petronas_layer8_MeshPart1
+    2300044: petronas_layer8_MeshPart2
+    2300046: petronas_layer8_MeshPart3
+    2300048: petronas_layer9_MeshPart0
+    2300050: petronas_layer9_MeshPart1
+    2300052: petronas_layer9_MeshPart2
+    3300000: petronas_layer10_MeshPart0
+    3300002: petronas_layer10_MeshPart1
+    3300004: petronas_layer10_MeshPart2
+    3300006: petronas_layer10_MeshPart3
+    3300008: petronas_layer10_MeshPart4
+    3300010: petronas_layer10_MeshPart5
+    3300012: petronas_layer1_MeshPart0
+    3300014: petronas_layer1_MeshPart1
+    3300016: petronas_layer1_MeshPart2
+    3300018: petronas_layer2
+    3300020: petronas_layer3
+    3300022: petronas_layer5
+    3300024: petronas_layer6_MeshPart0
+    3300026: petronas_layer6_MeshPart1
+    3300028: petronas_layer7_MeshPart0
+    3300030: petronas_layer7_MeshPart1
+    3300032: petronas_layer7_MeshPart2
+    3300034: petronas_layer7_MeshPart3
+    3300036: petronas_layer7_MeshPart4
+    3300038: petronas_layer7_MeshPart5
+    3300040: petronas_layer8_MeshPart0
+    3300042: petronas_layer8_MeshPart1
+    3300044: petronas_layer8_MeshPart2
+    3300046: petronas_layer8_MeshPart3
+    3300048: petronas_layer9_MeshPart0
+    3300050: petronas_layer9_MeshPart1
+    3300052: petronas_layer9_MeshPart2
+    4300000: petronas_layer1_MeshPart0
+    4300002: petronas_layer1_MeshPart1
+    4300004: petronas_layer1_MeshPart2
+    4300006: petronas_layer10_MeshPart0
+    4300008: petronas_layer10_MeshPart1
+    4300010: petronas_layer10_MeshPart2
+    4300012: petronas_layer10_MeshPart3
+    4300014: petronas_layer10_MeshPart4
+    4300016: petronas_layer10_MeshPart5
+    4300018: petronas_layer2
+    4300020: petronas_layer3
+    4300022: petronas_layer5
+    4300024: petronas_layer6_MeshPart0
+    4300026: petronas_layer6_MeshPart1
+    4300028: petronas_layer7_MeshPart0
+    4300030: petronas_layer7_MeshPart1
+    4300032: petronas_layer7_MeshPart2
+    4300034: petronas_layer7_MeshPart3
+    4300036: petronas_layer7_MeshPart4
+    4300038: petronas_layer7_MeshPart5
+    4300040: petronas_layer8_MeshPart0
+    4300042: petronas_layer8_MeshPart1
+    4300044: petronas_layer8_MeshPart2
+    4300046: petronas_layer8_MeshPart3
+    4300048: petronas_layer9_MeshPart0
+    4300050: petronas_layer9_MeshPart1
+    4300052: petronas_layer9_MeshPart2
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
