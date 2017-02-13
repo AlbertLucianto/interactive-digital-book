@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!--DOCTYPE page SYSTEM "PageSchema.dtd"-->
+<!DOCTYPE page [
+<!ELEMENT page ANY>
+
+<!ELEMENT text (content+, text*)>
+<!ATTLIST text id CDATA "0">
+<!ATTLIST text font CDATA "Arial">
+<!ATTLIST text fontStyle CDATA "Regular">
+<!ATTLIST text fontSize CDATA "16">
+<!ATTLIST text lineSpace CDATA "0">
+<!ATTLIST text positionX CDATA "0">
+<!ATTLIST text positionY CDATA "0">
+<!ATTLIST text positionZ CDATA "0">
+<!ATTLIST text scaleX CDATA "1">
+<!ATTLIST text scaleY CDATA "1">
+<!ATTLIST text scaleZ CDATA "1">
+<!ATTLIST text rotationX CDATA "0">
+<!ATTLIST text rotationY CDATA "0">
+<!ATTLIST text rotationZ CDATA "0">
+<!ELEMENT content (#PCDATA)>
+
+<!ELEMENT image (source, description?)>
+<!ELEMENT source EMPTY>
+<!ELEMENT description (#PCDATA)>
+<!ATTLIST image id CDATA "0">
+<!ATTLIST source href CDATA #REQUIRED>
+<!ATTLIST image positionX CDATA "0">
+<!ATTLIST image positionY CDATA "0">
+<!ATTLIST image positionZ CDATA "0">
+<!ATTLIST image scaleX CDATA "1">
+<!ATTLIST image scaleY CDATA "1">
+<!ATTLIST image scaleZ CDATA "1">
+<!ATTLIST image rotationX CDATA "0">
+<!ATTLIST image rotationY CDATA "0">
+<!ATTLIST image rotationZ CDATA "0">
+
+<!ELEMENT video (source, description?)>
+<!ATTLIST video id CDATA "0">
+<!ATTLIST video height CDATA "0" width CDATA "0">
+<!ATTLIST video positionX CDATA "0">
+<!ATTLIST video positionY CDATA "0">
+<!ATTLIST video positionZ CDATA "0">
+<!ATTLIST video scaleX CDATA "1">
+<!ATTLIST video scaleY CDATA "1">
+<!ATTLIST video scaleZ CDATA "1">
+<!ATTLIST video rotationX CDATA "0">
+<!ATTLIST video rotationY CDATA "0">
+<!ATTLIST video rotationZ CDATA "0">
+
+<!ELEMENT model (source, description?)>
+<!ATTLIST model id CDATA "0">
+<!ATTLIST model height CDATA "0" width CDATA "0">
+<!ATTLIST model positionX CDATA "0">
+<!ATTLIST model positionY CDATA "0">
+<!ATTLIST model positionZ CDATA "0">
+<!ATTLIST model scaleX CDATA "1">
+<!ATTLIST model scaleY CDATA "1">
+<!ATTLIST model scaleZ CDATA "1">
+<!ATTLIST model rotationX CDATA "0">
+<!ATTLIST model rotationY CDATA "0">
+<!ATTLIST model rotationZ CDATA "0">
+]>
+
+<page>
+	<image id="5" scaleX="0.3" scaleY="0.3" scaleZ="0.3" positionY="-150" positionX="-200">
+		<source href="Assets/Resources/Images/image1.jpg"></source>
+		<description>Picture of Albert</description>
+	</image>
+	<!--video id="3" height="15" width="30">
+		<source href="http://www.vid456.com/"> </source>
+		<description>Video of Albert</description>
+	</video-->
+	<model id="6" scaleX="4000" scaleY="4000" scaleZ="4000" positionX="200">
+		<source href="Models/Glass"></source>
+		<description>Load model 1</description>
+	</model>
+	<model id="7" scaleX="50" scaleY="50" scaleZ="50" positionX="-200" positionY="100">
+		<source href="Models/Lemon Whole"></source>
+		<description>Load model 1</description>
+	</model>
+</page>
+

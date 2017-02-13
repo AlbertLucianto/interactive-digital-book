@@ -51,10 +51,12 @@
      <Compile Include="Assets\Scripts\ModelXML.cs" />
      <Compile Include="Assets\Scripts\ObjectXML.cs" />
      <Compile Include="Assets\Scripts\ObjectsLoader.cs" />
+     <Compile Include="Assets\Scripts\OpenFileButton.cs" />
      <Compile Include="Assets\Scripts\TextXML.cs" />
      <Compile Include="Assets\Scripts\VideoXML.cs" />
      <Compile Include="Assets\Scripts\XMLDecoder.cs" />
      <None Include="Assets\Save_files\Data.xml" />
+     <None Include="Assets\Save_files\Data2.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
