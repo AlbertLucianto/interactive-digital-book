@@ -15,3 +15,7 @@
 /Users/stevenlucianto/Documents/Unity Projects/URECA/Temp/bin/Debug/Unity.CecilTools.dll
 /Users/stevenlucianto/Documents/Unity Projects/URECA/Temp/bin/Debug/Mono.Cecil.Pdb.dll
 /Users/stevenlucianto/Documents/Unity Projects/URECA/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/stevenlucianto/Documents/Unity Projects/URECA/Temp/bin/Debug/UnityEngine.PlaymodeTestsRunner.dll
+/Users/stevenlucianto/Documents/Unity Projects/URECA/Temp/bin/Debug/UnityEngine.Analytics.dll
+/Users/stevenlucianto/Documents/Unity Projects/URECA/Temp/bin/Debug/UnityEngine.HoloLens.dll
+/Users/stevenlucianto/Documents/Unity Projects/URECA/Temp/bin/Debug/UnityEngine.VR.dll

@@ -1,67 +1,70 @@
 ﻿using System;
+using UnityEngine;
+using System.Collections;
 
 namespace URECA
 {
 	public abstract class ObjectXML
 	{
 		private string id;
-		private int top;
+		private Vector3 position;
+		private Vector3 scale;
+		private Quaternion rotation;
+		/*private int top;
 		private int bottom;
 		private int left;
-		private int right;
+		private int right;*/
 
-		public ObjectXML ()
-		{
-		}
+		public abstract GameObject instantiateXMLObject();
+
+		//============== ID ==============
 
 		public void setId(string inId)
 		{
 			id = inId;
 		}
 
-		public void setTop(int inTop)
-		{
-			top = inTop;
-		}
-
-		public void setBottom(int inBottom)
-		{
-			bottom = inBottom;
-		}
-
-		public void setLeft(int inLeft)
-		{
-			left = inLeft;
-		}
-
-		public void setRight(int inRight)
-		{
-			right = inRight;
-		}
-			
 		public string getId()
 		{
 			return id;
 		}
 
-		public int getTop()
+		//============== Position ==============
+
+		public void setPosition(float x=0.0f, float y=0.0f, float z=0.0f)
 		{
-			return top;
+			position = new Vector3(x,y,z);
 		}
 
-		public int getBottom()
+		public Vector3 getPosition()
 		{
-			return bottom;
+			return position;
 		}
 
-		public int getLeft()
+		//============== Scale ==============
+
+		public void setScale(float x=0.0f, float y=0.0f, float z=0.0f)
 		{
-			return left;
+			scale = new Vector3(x,y,z);
 		}
-		public int getRight()
+
+		public Vector3 getScale()
 		{
-			return right;
+			return scale;
 		}
+
+		//============== Rotation ==============
+
+		public void setRotation(float x=0.0f, float y=0.0f, float z=0.0f)
+		{
+			rotation = Quaternion.Euler(new Vector3(x,y,z));
+		}
+
+		public Quaternion getRotation()
+		{
+			return rotation;
+		}
+
 	}
 }
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 namespace URECA
 {
@@ -12,6 +13,9 @@ namespace URECA
 		public VideoXML()
 		{
 
+		}
+		public override GameObject instantiateXMLObject(){
+			return new GameObject ();
 		}
 
 		public void setSource(string inSource)

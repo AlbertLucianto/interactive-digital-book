@@ -1,4 +1,7 @@
-﻿using System;
+﻿using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
+using System.IO;
 
 namespace URECA
 {
@@ -6,12 +9,38 @@ namespace URECA
 	{
 		private string source;
 		private string description;
-		private int height;
-		private int width;
 
-		public ImageXML()
+		public override GameObject instantiateXMLObject()
+		{
+			GameObject imageUnity = new GameObject ();
+			imageUnity.hideFlags = HideFlags.HideInHierarchy; //hide the object in scene
+
+			imageUnity.AddComponent<Image> ();
+			//imageUnity.AddComponent<RectTransform> ();
+
+			Image img = imageUnity.GetComponent("Image") as Image;
+			RectTransform imgTransform = imageUnity.GetComponent("RectTransform") as RectTransform;
+
+			Texture2D tex = LoadPNG (source);
+			img.sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0, 0));
+			imgTransform.sizeDelta = new Vector2 (tex.width, tex.height);
+
+			return imageUnity;
+		}
+
+		public static Texture2D LoadPNG(string filePath)
 		{
 
+			Texture2D tex = null;
+			byte[] fileData;
+
+			if (File.Exists(filePath))
+			{
+				fileData = File.ReadAllBytes(filePath);
+				tex = new Texture2D(2, 2);
+				tex.LoadImage(fileData); //..this will auto-resize the texture dimensions.
+			}
+			return tex;
 		}
 
 		public void setSource(string inSource)
@@ -23,17 +52,7 @@ namespace URECA
 		{
 			description = inDescription;
 		}
-
-		public void setHeight(int inHeight)
-		{
-			height = inHeight;
-		}
-
-		public void setWidth(int inWidth)
-		{
-			width = inWidth;
-		}
-
+			
 		public string getSource()
 		{
 			return source;
@@ -42,17 +61,7 @@ namespace URECA
 		public string getDescription()
 		{
 			return description;
-		}
-
-		public int getHeight()
-		{
-			return height;
-		}
-
-		public int getWidth()
-		{
-			return width;
-		}
+		}			
 	}
 }
 

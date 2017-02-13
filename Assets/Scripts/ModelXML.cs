@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
 
 namespace URECA
 {
@@ -6,12 +10,12 @@ namespace URECA
 	{
 		private string source;
 		private string description;
-		private int height;
-		private int width;
 
-		public ModelXML()
+		public override GameObject instantiateXMLObject()
 		{
+			GameObject modelXML = Resources.Load (source, typeof(GameObject)) as GameObject;
 
+			return modelXML;
 		}
 
 		public void setSource(string inSource)
@@ -24,16 +28,6 @@ namespace URECA
 			description = inDescription;
 		}
 
-		public void setHeight(int inHeight)
-		{
-			height = inHeight;
-		}
-
-		public void setWidth(int inWidth)
-		{
-			width = inWidth;
-		}
-
 		public string getSource()
 		{
 			return source;
@@ -44,15 +38,6 @@ namespace URECA
 			return description;
 		}
 
-		public int getHeight()
-		{
-			return height;
-		}
-
-		public int getWidth()
-		{
-			return width;
-		}
 	}
 }
 

@@ -1,26 +1,49 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
 
 namespace URECA
 {
 	public class TextXML: ObjectXML
 	{
 		private string content;
-		private string fontFamily;
+		private string font;
 		private string fontStyle;
 		private int fontSize;
-		private int kerning;
 		private int lineSpace;
 
-		public TextXML (){
-			
+		public override GameObject instantiateXMLObject()
+		{
+			GameObject textUnity = new GameObject ();
+			textUnity.hideFlags = HideFlags.HideInHierarchy; //hide the object in scene
+
+			textUnity.AddComponent<Text>();
+			textUnity.AddComponent<ContentSizeFitter>();
+
+			Text addText = textUnity.GetComponent<Text> ();
+			ContentSizeFitter textFitter = textUnity.GetComponent<ContentSizeFitter>();
+
+			addText.text = content;
+
+			if (font.Equals ("Arial")) {
+				addText.font = Resources.GetBuiltinResource (typeof(Font), "Arial.ttf") as Font;
+			}
+			else addText.font = Resources.Load ("Fonts/" + font, typeof(Font)) as Font;
+
+			textFitter.horizontalFit = ContentSizeFitter.FitMode.PreferredSize;
+			textFitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
+
+			return textUnity;
 		}
 
 		public void setContent(string inContent){
 			content = inContent;
 		}
 
-		public void setFontFamily(string inFontFamily){
-			fontFamily = inFontFamily;
+		public void setFont(string inFont){
+			font = inFont;
 		}
 
 		public void setFontStyle(string inFontStyle){
@@ -31,10 +54,6 @@ namespace URECA
 			fontSize = inFontSize;
 		}
 
-		public void setKerning(int inKerning){
-			kerning = inKerning;
-		}
-
 		public void setLineSpace(int inLineSpace){
 			lineSpace = inLineSpace;
 		}
@@ -43,8 +62,8 @@ namespace URECA
 			return content;
 		}
 
-		public string getFontFamily(){
-			return fontFamily;
+		public string getFont(){
+			return font;
 		}
 
 		public string getFontStyle(){
@@ -53,10 +72,6 @@ namespace URECA
 
 		public int getFontSize(){
 			return fontSize;
-		}
-
-		public int getKerning(){
-			return kerning;
 		}
 
 		public int getLineSpace(){

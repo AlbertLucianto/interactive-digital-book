@@ -4,17 +4,25 @@ using System.Xml.Linq;
 using System.Xml;
 using System.Xml.Schema;
 
+using UnityEngine;
+
 namespace URECA
 {
 	public class XMLDecoder
 	{
 		static List<ObjectXML> listObjects = new List<ObjectXML> ();
 
+		static float positionX, positionY, positionZ;
+		static float scaleX, scaleY, scaleZ;
+		static float rotationX, rotationY, rotationZ;
+
+		static ObjectXML addToList; //Every child of ObjectXML will be passed, then set Transform attributes
+
 		public XMLDecoder ()
 		{
 		}
 
-		public static void getData(string xmlPath){
+		public static void loadData(string xmlPath){
 			var settings = new XmlReaderSettings ();
 			settings.ProhibitDtd = false;
 			settings.ValidationType = ValidationType.DTD;
@@ -27,28 +35,50 @@ namespace URECA
 			XDocument doc = XDocument.Load(reader);
 			var elements = doc.Descendants("page").Elements();
 
+			//===============Exporting XML to C# Classes===============
+
 			foreach ( var element in elements )
 			{
+				
 				if (element.Name.LocalName.Equals("text")) {
-					addTextXML (element);
+					addToList = getTextXML (element);
 				}
 				else if (element.Name.LocalName.Equals("image"))
 				{
-					addImageXML(element);
+					addToList = getImageXML(element);
 				}
 
 				else if (element.Name.LocalName.Equals("video"))
 				{
-					addVideoXML(element);
+					addToList = getVideoXML(element);
 				}
 
 				else if (element.Name.LocalName.Equals("model"))
 				{
-					addModelXML(element);
+					addToList = getModelXML(element);
 				}
+
+				addToList.setId (element.Attribute ("id").Value);
+
+				positionX = float.Parse (element.Attribute ("positionX").Value);
+				positionY = float.Parse (element.Attribute ("positionY").Value);
+				positionZ = float.Parse (element.Attribute ("positionZ").Value);
+
+				scaleX = float.Parse (element.Attribute ("scaleX").Value);
+				scaleY = float.Parse (element.Attribute ("scaleY").Value);
+				scaleZ = float.Parse (element.Attribute ("scaleZ").Value);
+
+				rotationX = float.Parse (element.Attribute ("rotationX").Value);
+				rotationY = float.Parse (element.Attribute ("rotationY").Value);
+				rotationZ = float.Parse (element.Attribute ("rotationZ").Value);
+
+				addToList.setPosition (positionX, positionY, positionZ);
+				addToList.setScale (scaleX, scaleY, scaleZ);
+				addToList.setRotation (rotationX, rotationY, rotationZ);
+
+				listObjects.Add(addToList);
 			}
 
-			//return listObjects;
 		}
 
 		private static void ValidationCallBack(object sender, ValidationEventArgs e)
@@ -59,90 +89,69 @@ namespace URECA
 				Console.WriteLine("Validation error: " + e.Message);
 		}
 
-		public static List<ObjectXML> accessData(){
+
+
+		//=================== Return List of Objects ===================
+		public static List<ObjectXML> getData(){
 			return listObjects;
 		}
 
+
+
+		//=================== Clear List / Buffer ======================
 		public static void clearData(){
 			for (int i = 0; i < listObjects.Count; i++)
 			{
 				listObjects.RemoveAt(i);
 			}
 		}
+			
 
-		public static void addTextXML(XElement textFromXML){
+
+		//============ Methods for retrieving XML of each type ==========
+
+		internal static TextXML getTextXML(XElement textFromXML){
 			TextXML textToAdd = new TextXML ();
 
 			textToAdd.setContent (textFromXML.Element ("content").Value);
-			textToAdd.setFontFamily (textFromXML.Attribute ("fontFamily").Value);
-			//Console.WriteLine (textFromXML.Attribute ("lineSpace").Value);
+			textToAdd.setFont (textFromXML.Attribute ("font").Value);
 			textToAdd.setFontStyle (textFromXML.Attribute ("fontStyle").Value);
 			textToAdd.setFontSize (Int32.Parse(textFromXML.Attribute ("fontSize").Value));
-			textToAdd.setKerning (Int32.Parse(textFromXML.Attribute ("kerning").Value));
 			textToAdd.setLineSpace (Int32.Parse(textFromXML.Attribute ("lineSpace").Value));
-			textToAdd.setTop(Int32.Parse(textFromXML.Attribute("top").Value));
-			textToAdd.setBottom(Int32.Parse(textFromXML.Attribute("bottom").Value));
-			textToAdd.setLeft(Int32.Parse(textFromXML.Attribute("left").Value));
-			textToAdd.setRight(Int32.Parse(textFromXML.Attribute("right").Value));
-			//Console.WriteLine (textFromXML.Element ("content").Value);*/
-			listObjects.Add (textToAdd);
+
+			return textToAdd;
 		}
 
-		public static void addImageXML(XElement imageFromXML)
+		internal static ImageXML getImageXML(XElement imageFromXML)
 		{
 			ImageXML imageToAdd = new ImageXML();
 
 			imageToAdd.setSource(imageFromXML.Element("source").Attribute("href").Value);
 			imageToAdd.setDescription(imageFromXML.Element("description").Value);
-			//imageToAdd.setId(imageFromXML.Attribute("id").Value);
-			//Console.WriteLine (textFromXML.Attribute ("lineSpace").Value);
-			imageToAdd.setHeight(Int32.Parse(imageFromXML.Attribute("height").Value));
-			imageToAdd.setWidth(Int32.Parse(imageFromXML.Attribute("width").Value));
-			imageToAdd.setTop(Int32.Parse(imageFromXML.Attribute("top").Value));
-			imageToAdd.setBottom(Int32.Parse(imageFromXML.Attribute("bottom").Value));
-			imageToAdd.setLeft(Int32.Parse(imageFromXML.Attribute("left").Value));
-			imageToAdd.setRight(Int32.Parse(imageFromXML.Attribute("right").Value));
-			//Console.WriteLine (textFromXML.Element ("content").Value);*/
 
-			listObjects.Add(imageToAdd);
+			return imageToAdd;
 		}
 
-		public static void addVideoXML(XElement videoFromXML)
+		internal static VideoXML getVideoXML(XElement videoFromXML)
 		{
 			VideoXML videoToAdd = new VideoXML();
 
 			videoToAdd.setSource(videoFromXML.Element("source").Attribute("href").Value);
 			videoToAdd.setDescription(videoFromXML.Element("description").Value);
-			//videoToAdd.setId(videoFromXML.Attribute("id").Value);
-			//Console.WriteLine (textFromXML.Attribute ("lineSpace").Value);
 			videoToAdd.setHeight(Int32.Parse(videoFromXML.Attribute("height").Value));
 			videoToAdd.setWidth(Int32.Parse(videoFromXML.Attribute("width").Value));
-			videoToAdd.setTop(Int32.Parse(videoFromXML.Attribute("top").Value));
-			videoToAdd.setBottom(Int32.Parse(videoFromXML.Attribute("bottom").Value));
-			videoToAdd.setLeft(Int32.Parse(videoFromXML.Attribute("left").Value));
-			videoToAdd.setRight(Int32.Parse(videoFromXML.Attribute("right").Value));
-			//Console.WriteLine (textFromXML.Element ("content").Value);*/
 
-			listObjects.Add(videoToAdd);
+			return videoToAdd;
 		}
 
-		public static void addModelXML(XElement modelFromXML)
+		internal static ModelXML getModelXML(XElement modelFromXML)
 		{
 			ModelXML modelToAdd = new ModelXML();
 
 			modelToAdd.setSource(modelFromXML.Element("source").Attribute("href").Value);
 			modelToAdd.setDescription(modelFromXML.Element("description").Value);
-			//modelToAdd.setId(modelFromXML.Attribute("id").Value);
-			//Console.WriteLine (textFromXML.Attribute ("lineSpace").Value);
-			modelToAdd.setHeight(Int32.Parse(modelFromXML.Attribute("height").Value));
-			modelToAdd.setWidth(Int32.Parse(modelFromXML.Attribute("width").Value));
-			modelToAdd.setTop(Int32.Parse(modelFromXML.Attribute("top").Value));
-			modelToAdd.setBottom(Int32.Parse(modelFromXML.Attribute("bottom").Value));
-			modelToAdd.setLeft(Int32.Parse(modelFromXML.Attribute("left").Value));
-			modelToAdd.setRight(Int32.Parse(modelFromXML.Attribute("right").Value));
-			//Console.WriteLine (textFromXML.Element ("content").Value);*/
 
-			listObjects.Add(modelToAdd);
+			return modelToAdd;
 		}
 	}
 }
