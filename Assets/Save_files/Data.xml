@@ -37,7 +37,6 @@
 
 <!ELEMENT video (source, description?)>
 <!ATTLIST video id CDATA "0">
-<!ATTLIST video height CDATA "0" width CDATA "0">
 <!ATTLIST video positionX CDATA "0">
 <!ATTLIST video positionY CDATA "0">
 <!ATTLIST video positionZ CDATA "0">
@@ -66,7 +65,7 @@
 	<text id="0">
 		<content>Hello my name is Albert</content>
 	</text>
-	<text id="1" font="DIN RegularAlternate" fontStyle="Regular" fontSize="8" lineSpace="15">
+	<text id="1" font="DIN RegularAlternate" fontStyle="Regular" fontSize="8" lineSpace="15" positionY="50">
 		<content>
     Hello my name is Keefe.
     I am currently studying Computer Science.
@@ -76,17 +75,17 @@
 		<source href="Assets/Resources/Images/image1.jpg"></source>
 		<description>Picture of Albert</description>
 	</image>
-	<!--video id="3" height="15" width="30">
-		<source href="http://www.vid456.com/"> </source>
-		<description>Video of Albert</description>
-	</video-->
-	<model id="3" scaleX="4000" scaleY="4000" scaleZ="4000" positionX="-200">
+	<model id="3" scaleX="4000" scaleY="4000" scaleZ="4000" positionX="-200" positionY="50" rotationX="-30">
 		<source href="Models/Glass"></source>
 		<description>Load model 1</description>
 	</model>
-	<model id="4" scaleX="50" scaleY="50" scaleZ="50" positionX="200" positionY="-100">
+	<model id="4" scaleX="30" scaleY="30" scaleZ="30" positionX="30" positionY="-100" positionZ="-100">
 		<source href="Models/Lemon Whole"></source>
 		<description>Load model 1</description>
 	</model>
+	<image id="5" scaleX="0.1" scaleY="0.1" scaleZ="0.1" positionY="-150" positionX="-250">
+		<source href="Assets/Resources/Images/Lo-Fi CZ3003-04.jpg"></source>
+		<description>Picture of Albert</description>
+	</image>
 </page>
 

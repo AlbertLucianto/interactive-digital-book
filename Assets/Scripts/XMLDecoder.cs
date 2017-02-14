@@ -100,10 +100,7 @@ namespace URECA
 
 		//=================== Clear List / Buffer ======================
 		public static void clearData(){
-			for (int i = 0; i < listObjects.Count; i++)
-			{
-				listObjects.RemoveAt(i);
-			}
+			listObjects.Clear ();
 		}
 			
 
@@ -138,8 +135,6 @@ namespace URECA
 
 			videoToAdd.setSource(videoFromXML.Element("source").Attribute("href").Value);
 			videoToAdd.setDescription(videoFromXML.Element("description").Value);
-			videoToAdd.setHeight(Int32.Parse(videoFromXML.Attribute("height").Value));
-			videoToAdd.setWidth(Int32.Parse(videoFromXML.Attribute("width").Value));
 
 			return videoToAdd;
 		}

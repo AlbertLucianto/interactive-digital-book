@@ -37,7 +37,6 @@
 
 <!ELEMENT video (source, description?)>
 <!ATTLIST video id CDATA "0">
-<!ATTLIST video height CDATA "0" width CDATA "0">
 <!ATTLIST video positionX CDATA "0">
 <!ATTLIST video positionY CDATA "0">
 <!ATTLIST video positionZ CDATA "0">
@@ -50,7 +49,6 @@
 
 <!ELEMENT model (source, description?)>
 <!ATTLIST model id CDATA "0">
-<!ATTLIST model height CDATA "0" width CDATA "0">
 <!ATTLIST model positionX CDATA "0">
 <!ATTLIST model positionY CDATA "0">
 <!ATTLIST model positionZ CDATA "0">
@@ -64,18 +62,18 @@
 
 <page>
 	<image id="5" scaleX="0.3" scaleY="0.3" scaleZ="0.3" positionY="-150" positionX="-200">
-		<source href="Assets/Resources/Images/image1.jpg"></source>
+		<source href="Assets/Resources/Images/Image1.jpg"></source>
 		<description>Picture of Albert</description>
 	</image>
-	<!--video id="3" height="15" width="30">
-		<source href="http://www.vid456.com/"> </source>
+	<video id="6" rotationX="90" rotationY="180" positionZ="-10" scaleX="20" scaleZ="20">
+		<source href="file:///Users/stevenlucianto/Documents/Unity Projects/URECA/Assets/Resources/Videos/Yee.ogv"> </source>
 		<description>Video of Albert</description>
-	</video-->
-	<model id="6" scaleX="4000" scaleY="4000" scaleZ="4000" positionX="200">
+	</video>
+	<model id="7" scaleX="4000" scaleY="4000" scaleZ="4000" positionX="200">
 		<source href="Models/Glass"></source>
 		<description>Load model 1</description>
 	</model>
-	<model id="7" scaleX="50" scaleY="50" scaleZ="50" positionX="-200" positionY="100">
+	<model id="8" scaleX="50" scaleY="50" scaleZ="50" positionX="-200" positionY="100">
 		<source href="Models/Lemon Whole"></source>
 		<description>Load model 1</description>
 	</model>

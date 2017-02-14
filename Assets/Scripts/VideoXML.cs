@@ -1,5 +1,7 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
+using UnityEngine.UI;
+using System.IO;
 
 namespace URECA
 {
@@ -7,16 +9,31 @@ namespace URECA
 	{
 		private string source;
 		private string description;
-		private int height;
-		private int width;
 
 		public VideoXML()
 		{
 
 		}
 		public override GameObject instantiateXMLObject(){
-			return new GameObject ();
+			GameObject videoUnity = GameObject.CreatePrimitive (PrimitiveType.Plane);
+			videoUnity.hideFlags = HideFlags.HideInHierarchy; //hide the object in scene
+			videoUnity.tag = "Video";
+
+			videoUnity.AddComponent<RectTransform> ();
+			videoUnity.AddComponent<AudioSource> ();
+
+			Renderer getRender = videoUnity.GetComponent<Renderer>();
+			AudioSource getAudio = videoUnity.GetComponent<AudioSource> ();
+
+			//Debug.Log (source);
+			var www = new WWW(source);
+			MovieTexture movieTexture = www.movie;
+			getRender.material.mainTexture = movieTexture;
+			getAudio.clip = movieTexture.audioClip;
+
+			return videoUnity;
 		}
+
 
 		public void setSource(string inSource)
 		{
@@ -28,16 +45,6 @@ namespace URECA
 			description = inDescription;
 		}
 
-		public void setHeight(int inHeight)
-		{
-			height = inHeight;
-		}
-
-		public void setWidth(int inWidth)
-		{
-			width = inWidth;
-		}
-
 		public string getSource()
 		{
 			return source;
@@ -47,15 +54,6 @@ namespace URECA
 		{
 			return description;
 		}
-
-		public int getHeight()
-		{
-			return height;
-		}
-
-		public int getWidth()
-		{
-			return width;
-		}
+			
 	}
 }

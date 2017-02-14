@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\ObjectXML.cs" />
      <Compile Include="Assets\Scripts\ObjectsLoader.cs" />
      <Compile Include="Assets\Scripts\OpenFileButton.cs" />
+     <Compile Include="Assets\Scripts\PlayVideo.cs" />
      <Compile Include="Assets\Scripts\TextXML.cs" />
      <Compile Include="Assets\Scripts\VideoXML.cs" />
      <Compile Include="Assets\Scripts\XMLDecoder.cs" />
