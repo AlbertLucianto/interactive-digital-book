@@ -21,7 +21,9 @@ public class PlayVideo : MonoBehaviour {
 		MovieTexture c = (MovieTexture)b.material.mainTexture;
 		AudioSource d = a.GetComponent<AudioSource> ();
 
-		d.Play ();
-		c.Play ();
+		if (c.isReadyToPlay && d.clip.loadState.Equals(AudioDataLoadState.Loaded)) {
+			d.Play ();
+			c.Play ();
+		}
 	}
 }

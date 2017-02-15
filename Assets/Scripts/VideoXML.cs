@@ -26,8 +26,14 @@ namespace URECA
 			AudioSource getAudio = videoUnity.GetComponent<AudioSource> ();
 
 			//Debug.Log (source);
-			var www = new WWW(source);
+			var www = new WWW("file://" + Application.dataPath + "/" + source);
+			//Debug.Log ("file://" + Application.dataPath + source);
 			MovieTexture movieTexture = www.movie;
+
+			if (movieTexture.isReadyToPlay) {
+				Debug.Log ("Load Movie");
+			};
+				
 			getRender.material.mainTexture = movieTexture;
 			getAudio.clip = movieTexture.audioClip;
 
