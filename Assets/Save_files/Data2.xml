@@ -66,7 +66,7 @@
 		<description>Picture of Albert</description>
 	</image>
 	<video id="6" rotationX="90" rotationY="180" positionZ="-10" scaleX="20" scaleZ="20">
-		<source href="Resources/Videos/Yee.ogv"> </source>
+		<source href="Resources/Videos/Video2.ogv"> </source>
 		<description>Video of Albert</description>
 	</video>
 	<model id="7" scaleX="4000" scaleY="4000" scaleZ="4000" positionX="200">
@@ -77,5 +77,9 @@
 		<source href="Models/Lemon Whole"></source>
 		<description>Load model 1</description>
 	</model>
+	<video id="9" rotationX="90" rotationY="180" positionZ="-10" positionX="-230" positionY="100" scaleX="20" scaleZ="20">
+		<source href="Resources/Videos/Yee.ogv"> </source>
+		<description>Video of Albert</description>
+	</video>
 </page>
 

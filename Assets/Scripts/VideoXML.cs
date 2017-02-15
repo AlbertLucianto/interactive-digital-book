@@ -31,7 +31,7 @@ namespace URECA
 			MovieTexture movieTexture = www.movie;
 
 			if (movieTexture.isReadyToPlay) {
-				Debug.Log ("Load Movie");
+				Debug.Log ("Loading movie");
 			};
 				
 			getRender.material.mainTexture = movieTexture;
