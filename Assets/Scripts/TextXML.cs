@@ -35,6 +35,8 @@ namespace URECA
 			textFitter.horizontalFit = ContentSizeFitter.FitMode.PreferredSize;
 			textFitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
 
+			Debug.Log ("Add text successful");
+
 			return textUnity;
 		}
 

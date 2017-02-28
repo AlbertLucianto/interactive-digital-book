@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <!--DOCTYPE page SYSTEM "PageSchema.dtd"-->
-<!DOCTYPE page [
+<!DOCTYPE pages [
+<!ELEMENT pages (page+)>
 <!ELEMENT page ANY>
 
 <!ELEMENT text (content+, text*)>
@@ -61,31 +62,54 @@
 <!ATTLIST model rotationZ CDATA "0">
 ]>
 
-<page>
-	<text id="0">
-		<content>Hello my name is Albert</content>
-	</text>
-	<text id="1" font="DIN RegularAlternate" fontStyle="Regular" fontSize="8" lineSpace="15" positionY="50">
-		<content>
-    Hello my name is Keefe.
-    I am currently studying Computer Science.
-    </content>
-	</text>
-	<image id="2" scaleX="0.3" scaleY="0.3" scaleZ="0.3" positionY="150" positionX="200">
-		<source href="Assets/Resources/Images/image1.jpg"></source>
-		<description>Picture of Albert</description>
-	</image>
-	<model id="3" scaleX="4000" scaleY="4000" scaleZ="4000" positionX="-200" positionY="50" rotationX="-30">
-		<source href="Models/Glass"></source>
-		<description>Load model 1</description>
-	</model>
-	<model id="4" scaleX="30" scaleY="30" scaleZ="30" positionX="30" positionY="-100" positionZ="-100">
-		<source href="Models/Lemon Whole"></source>
-		<description>Load model 1</description>
-	</model>
-	<image id="5" scaleX="0.1" scaleY="0.1" scaleZ="0.1" positionY="-150" positionX="-250">
-		<source href="Assets/Resources/Images/Lo-Fi CZ3003-04.jpg"></source>
-		<description>Picture of Albert</description>
-	</image>
-</page>
-
+<pages>
+	<page>
+		<text id="0">
+			<content>Hello my name is Albert</content>
+		</text>
+		<text id="1" font="DIN RegularAlternate" fontStyle="Regular" fontSize="8" lineSpace="15" positionY="50">
+			<content>
+	    Hello my name is Keefe.
+	    I am currently studying Computer Science.
+	    </content>
+		</text>
+		<image id="2" scaleX="0.3" scaleY="0.3" scaleZ="0.3" positionY="150" positionX="200">
+			<source href="Assets/Resources/Images/image1.jpg"></source>
+			<description>Picture of Albert</description>
+		</image>
+		<model id="3" scaleX="4000" scaleY="4000" scaleZ="4000" positionX="-200" positionY="50" rotationX="-30">
+			<source href="Models/Glass"></source>
+			<description>Load model 1</description>
+		</model>
+		<model id="4" scaleX="30" scaleY="30" scaleZ="30" positionX="30" positionY="-100" positionZ="-100">
+			<source href="Models/Lemon Whole"></source>
+			<description>Load model 1</description>
+		</model>
+		<image id="5" scaleX="0.1" scaleY="0.1" scaleZ="0.1" positionY="-150" positionX="-250">
+			<source href="Assets/Resources/Images/Lo-Fi CZ3003-04.jpg"></source>
+			<description>Picture of Albert</description>
+		</image>
+		<video id="6" rotationX="90" rotationY="180" positionZ="-10" positionX="200" positionY="-150" scaleX="20" scaleZ="20">
+			<source href="Resources/Videos/Video2.ogv"> </source>
+			<description>Video of Albert</description>
+		</video>
+	</page>
+	<page>
+		<image id="0" scaleX="0.3" scaleY="0.3" scaleZ="0.3" positionY="-150" positionX="-200">
+			<source href="Assets/Resources/Images/Image1.jpg"></source>
+			<description>Picture of Albert</description>
+		</image>
+		<model id="1" scaleX="4000" scaleY="4000" scaleZ="4000" positionX="200">
+			<source href="Models/Glass"></source>
+			<description>Load model 1</description>
+		</model>
+		<model id="2" scaleX="50" scaleY="50" scaleZ="50" positionX="-200" positionY="100">
+			<source href="Models/Lemon Whole"></source>
+			<description>Load model 1</description>
+		</model>
+		<video id="3" rotationX="90" rotationY="180" positionZ="-10" positionY="100" scaleX="20" scaleZ="20">
+			<source href="Resources/Videos/Yee.ogv"> </source>
+			<description>Video of Albert</description>
+		</video>
+	</page>
+</pages>

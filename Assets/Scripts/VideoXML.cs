@@ -37,6 +37,8 @@ namespace URECA
 			getRender.material.mainTexture = movieTexture;
 			getAudio.clip = movieTexture.audioClip;
 
+			Debug.Log ("Add video successful");
+
 			return videoUnity;
 		}
 

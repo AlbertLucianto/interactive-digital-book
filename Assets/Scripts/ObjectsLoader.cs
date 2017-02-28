@@ -7,14 +7,16 @@ namespace URECA
 {
 	public class ObjectsLoader : MonoBehaviour {
 
-		private static List<ObjectXML> allObjects;
+		static PageLoader pageLoader;
+
+		private static List<PageLoader> pages = new List<PageLoader>();
 		private static InputField inputFileName;
 		private static GameObject canvas = GameObject.FindWithTag ("Canvas");
 		private static GameObject mainCamera = GameObject.FindWithTag ("MainCamera");
-		//private List<GameObject> unityObjects;
 
-		// Use this for initialization
-		public static void Load() {
+		private static int currPage = 1;
+
+		public static void loadObjects() {
 
 			foreach (Transform child in canvas.transform) {
 				//Debug.Log (child.gameObject.name);
@@ -31,22 +33,39 @@ namespace URECA
 			XMLDecoder.clearData ();
 
 			XMLDecoder.loadData("Assets/Save_files/" + fileName + ".xml");
-			allObjects = XMLDecoder.getData();
 
-			foreach (var objectXML in allObjects) {
-				GameObject x = Instantiate(objectXML.instantiateXMLObject()) as GameObject;
-				x.name = objectXML.getId();
+			foreach (var pageXML in XMLDecoder.getData()) {
 
-				x.transform.position = objectXML.getPosition ();
-				x.transform.localScale = objectXML.getScale ();
-				x.transform.rotation = objectXML.getRotation ();
+				pageLoader = new PageLoader();
+				pageLoader.addObjectsToPage (pageXML);
+				pages.Add(pageLoader);
+
+			}
+
+			loadPageToWindow (currPage);
+		}
+
+		public static void loadPageToWindow(int pageNum){
+
+			//Debug.Log (pages[0]);
+
+			foreach (Transform child in canvas.transform) {
+
+				Destroy (child.gameObject);
+
+			}
+
+			foreach (GameObjectWithTransform theGameObject in pages[pageNum].gameObjects) {
+
+				var x = (GameObject)Instantiate(theGameObject.gameObject) as GameObject;
+
+				x.transform.position = theGameObject.position ;
+				x.transform.localScale = theGameObject.scale;
+				x.transform.rotation = theGameObject.rotation;
 
 				x.transform.SetParent(canvas.transform, false);
 
 			}
-		}
-
-		public void Start(){
 		}
 	}
 }

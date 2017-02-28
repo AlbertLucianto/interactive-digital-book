@@ -25,6 +25,8 @@ namespace URECA
 			img.sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0, 0));
 			imgTransform.sizeDelta = new Vector2 (tex.width, tex.height);
 
+			Debug.Log ("Add image successful");
+
 			return imageUnity;
 		}
 
