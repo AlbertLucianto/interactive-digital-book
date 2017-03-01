@@ -8,13 +8,6 @@ namespace URECA
 	public class PageLoader {
 
 		public List<GameObjectWithTransform> gameObjects = new List<GameObjectWithTransform>();
-		private static GameObject canvas;
-
-		public void Start(){
-
-			canvas = GameObject.FindWithTag ("Canvas");
-
-		}
 
 		public void addObjectsToPage(PageXML pageXML){
 			

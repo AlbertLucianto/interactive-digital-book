@@ -14,8 +14,6 @@ namespace URECA
 		private static GameObject canvas = GameObject.FindWithTag ("Canvas");
 		private static GameObject mainCamera = GameObject.FindWithTag ("MainCamera");
 
-		private static int currPage = 1;
-
 		public static void loadObjects() {
 
 			foreach (Transform child in canvas.transform) {
@@ -42,7 +40,7 @@ namespace URECA
 
 			}
 
-			loadPageToWindow (currPage);
+			loadPageToWindow (0);
 		}
 
 		public static void loadPageToWindow(int pageNum){
@@ -58,6 +56,8 @@ namespace URECA
 			foreach (GameObjectWithTransform theGameObject in pages[pageNum].gameObjects) {
 
 				var x = (GameObject)Instantiate(theGameObject.gameObject) as GameObject;
+
+				x.name = theGameObject.id;
 
 				x.transform.position = theGameObject.position ;
 				x.transform.localScale = theGameObject.scale;

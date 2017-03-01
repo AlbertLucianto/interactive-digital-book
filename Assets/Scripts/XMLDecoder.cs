@@ -67,6 +67,11 @@ namespace URECA
 			}
 
 			listPages.Clear ();
+			numOfPages = 0;
+		}
+
+		public static int getNumPages(){
+			return numOfPages;
 		}
 			
 	}

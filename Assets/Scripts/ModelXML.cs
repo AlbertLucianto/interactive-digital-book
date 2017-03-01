@@ -15,8 +15,6 @@ namespace URECA
 		{
 			GameObject modelXML = Resources.Load (source, typeof(GameObject)) as GameObject;
 
-			Debug.Log ("Add model successful");
-
 			return modelXML;
 		}
 

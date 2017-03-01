@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\ObjectsLoader.cs" />
      <Compile Include="Assets\Scripts\OpenFileButton.cs" />
      <Compile Include="Assets\Scripts\PageLoader.cs" />
+     <Compile Include="Assets\Scripts\PageNav.cs" />
      <Compile Include="Assets\Scripts\PageXML.cs" />
      <Compile Include="Assets\Scripts\PlayVideo.cs" />
      <Compile Include="Assets\Scripts\TextXML.cs" />
