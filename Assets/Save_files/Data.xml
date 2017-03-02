@@ -7,7 +7,7 @@
 <!ELEMENT text (content+, text*)>
 <!ATTLIST text id CDATA "0">
 <!ATTLIST text font CDATA "Arial">
-<!ATTLIST text fontStyle CDATA "Regular">
+<!ATTLIST text fontStyle CDATA "Normal">
 <!ATTLIST text fontSize CDATA "16">
 <!ATTLIST text lineSpace CDATA "0">
 <!ATTLIST text positionX CDATA "0">
@@ -69,11 +69,11 @@
 		</text>
 		<text id="1" font="DIN RegularAlternate" fontStyle="Regular" fontSize="8" lineSpace="15" positionY="50">
 			<content>
-	    Hello my name is Keefe.
-	    I am currently studying Computer Science.
-	    </content>
+		    Hello my name is Keefe.
+		    I am currently studying Computer Science.
+		    </content>
 		</text>
-		<image id="2" scaleX="0.3" scaleY="0.3" scaleZ="0.3" positionY="150" positionX="200">
+		<image id="2" scaleX="0.3" scaleY="0.3" scaleZ="0.3" positionY="120" positionX="200">
 			<source href="Assets/Resources/Images/image1.jpg"></source>
 			<description>Picture of Albert</description>
 		</image>
@@ -93,6 +93,9 @@
 			<source href="Resources/Videos/Video2.ogv"> </source>
 			<description>Video of Albert</description>
 		</video>
+		<text id="7" fontSize="20" positionX="-300" positionY="200">
+			<content>This is page 1</content>
+		</text>
 	</page>
 	<page>
 		<image id="0" scaleX="0.3" scaleY="0.3" scaleZ="0.3" positionY="-150" positionX="-200">
@@ -111,5 +114,35 @@
 			<source href="Resources/Videos/Yee.ogv"> </source>
 			<description>Video of Albert</description>
 		</video>
+		<text id="6" fontSize="20" positionX="-300" positionY="200">
+			<content>This is page 2</content>
+		</text>
+	</page>
+	<page>
+		<text id="0" positionX="-250" positionY="150">
+			<content>Hello my name is Albert</content>
+		</text>
+		<text id="1" font="DIN RegularAlternate" fontStyle="Regular" fontSize="8" lineSpace="15" positionX="-250" positionY="100">
+			<content>
+		    Hello my name is Keefe.
+		    I am currently studying Computer Science.
+		    </content>
+		</text>
+		<text id="2" positionX="-250" positionY="50">
+			<content>
+			Working on this URECA project.
+			Someone said they lived together,
+			I ran out the door to get her.
+			</content>
+		</text>
+		<text id="3" font="DIN RegularAlternate" fontStyle="Regular" fontSize="8" lineSpace="15" positionX="-150">
+			<content>
+		    Given your question "is it possible", almost everything is possible.
+		    Probably your are doing a basic error.
+		    </content>
+		</text>
+		<text id="4" fontSize="20" positionX="-300" positionY="200">
+			<content>This is page 3</content>
+		</text>
 	</page>
 </pages>

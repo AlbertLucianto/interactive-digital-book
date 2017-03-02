@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\PageNav.cs" />
      <Compile Include="Assets\Scripts\PageXML.cs" />
      <Compile Include="Assets\Scripts\PlayVideo.cs" />
+     <Compile Include="Assets\Scripts\SelectionObject.cs" />
      <Compile Include="Assets\Scripts\TextXML.cs" />
      <Compile Include="Assets\Scripts\VideoXML.cs" />
      <Compile Include="Assets\Scripts\XMLDecoder.cs" />

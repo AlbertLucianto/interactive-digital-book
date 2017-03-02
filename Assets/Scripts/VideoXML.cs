@@ -22,6 +22,11 @@ namespace URECA
 			videoUnity.AddComponent<RectTransform> ();
 			videoUnity.AddComponent<AudioSource> ();
 
+//			Collider toRemove = videoUnity.GetComponent<Collider> ();
+//			Debug.Log (toRemove);
+//			MonoBehaviour.Destroy (toRemove); // Will later use BoxCollider2D for all kind of objects
+//			Debug.Log (toRemove);
+
 			Renderer getRender = videoUnity.GetComponent<Renderer>();
 			AudioSource getAudio = videoUnity.GetComponent<AudioSource> ();
 
