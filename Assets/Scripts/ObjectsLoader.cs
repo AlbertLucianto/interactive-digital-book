@@ -8,18 +8,18 @@ namespace URECA
 	public class ObjectsLoader : MonoBehaviour {
 
 		static PageLoader pageLoader;
-
-		private static List<PageLoader> pages = new List<PageLoader>();
+		private static bool destroyFirst;
 		private static InputField inputFileName;
 		private static GameObject canvas = GameObject.FindWithTag ("Canvas");
 		private static GameObject mainCamera = GameObject.FindWithTag ("MainCamera");
 		private static InputField navPage = GameObject.FindWithTag ("Page").GetComponent<InputField>();
 
-		public static void loadObjects() {
-
-			foreach (Transform child in canvas.transform) {
-				//Debug.Log (child.gameObject.name);
+		public static void loadObjects(MonoBehaviour something) {	// MonoBehaviour something: TRICKY (StartCoroutine needs
+																	// an instance to run, but in static method, it cannot
+			foreach (Transform child in canvas.transform) {			// contain an instance except it is passed by argument)
+																	// i.e. passing any of 'this' of MonoBehaviour will do
 				Destroy (child.gameObject);
+
 			}
 
 			inputFileName = GameObject.FindWithTag ("InputFileName").GetComponent<InputField> ();
@@ -33,57 +33,39 @@ namespace URECA
 
 			XMLDecoder.loadData("Assets/Save_files/" + fileName + ".xml");
 
-			foreach (var pageXML in XMLDecoder.getData()) {
-
-				pageLoader = new PageLoader();
-				pageLoader.addObjectsToPage (pageXML);
-				pages.Add(pageLoader);
-
-			}
-
-			loadPageToWindow (0);
-			navPage.text = "1";
+			something.StartCoroutine (createThePages ());
+				
 		}
 
-		public static void loadPageToWindow(int pageNum){
+		public static void showPageOnWindow(int pageNum){
+			
+			foreach (Transform page in canvas.transform) {
 
-			//Debug.Log (pages[0]);
+				page.gameObject.SetActive (false);
+				Debug.Log ("Hiding " + page.gameObject);
 
-			foreach (Transform child in canvas.transform) {
+			}
 
-				Destroy (child.gameObject);
+			Debug.Log ("Showing " + canvas.transform.GetChild (pageNum).gameObject);
+			canvas.transform.GetChild (pageNum).gameObject.SetActive (true);
+		}
+
+		public static IEnumerator createThePages(){ // IEnumerator used to wait destroy
+
+			while (canvas.transform.childCount > 0)
+				yield return new WaitForSeconds (0.1f);
+
+			int i = 1;
+			foreach (var pageXML in XMLDecoder.getData()) {
+
+				pageLoader = new PageLoader(i++);
+				pageLoader.addObjectsToPage (pageXML);
+				pageLoader.page.transform.SetParent (canvas.transform, false);
 
 			}
 
-			foreach (GameObjectWithTransform theGameObject in pages[pageNum].gameObjects) {
-
-				var x = (GameObject)Instantiate(theGameObject.gameObject) as GameObject;
-
-				if (!x.GetComponent<MeshCollider> ()) {
-					x.gameObject.AddComponent<BoxCollider> ();
-					BoxCollider collider = x.gameObject.GetComponent<BoxCollider> ();
-					collider.isTrigger = true;
-
-					if (x.gameObject.GetComponent<RectTransform> ()) {
-						RectTransform rectTransform = x.gameObject.GetComponent<RectTransform> ();
-						collider.size = new Vector3 (rectTransform.rect.width, rectTransform.rect.height, 1);
-					} else { // Default size
-						collider.size = new Vector3 (50f / theGameObject.scale.x, 50f / theGameObject.scale.y, 1 / theGameObject.scale.z);
-					}
-				} else {
-					x.GetComponent<MeshCollider> ().convex = true;
-					x.GetComponent<MeshCollider> ().isTrigger = true;
-				}
-
-				x.name = theGameObject.id;
-
-				x.transform.position = theGameObject.position ;
-				x.transform.localScale = theGameObject.scale;
-				x.transform.rotation = theGameObject.rotation;
-
-				x.transform.SetParent(canvas.transform, false);
-
-			}
+			showPageOnWindow (0);
+			navPage.text = "1";
 		}
 	}
 }

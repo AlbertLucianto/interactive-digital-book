@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\AssemblyInfo.cs" />
-     <Compile Include="Assets\Scripts\GameObjectWithTransform.cs" />
      <Compile Include="Assets\Scripts\ImageXML.cs" />
      <Compile Include="Assets\Scripts\ModelXML.cs" />
      <Compile Include="Assets\Scripts\ObjectXML.cs" />

@@ -9,7 +9,6 @@ namespace URECA
 		// Update is called once per frame
 		void Update () {
 			if (Input.GetMouseButtonDown (0)) {
-				Debug.Log("Mouse is down");
 
 				RaycastHit hitInfo = new RaycastHit();
 
@@ -18,9 +17,6 @@ namespace URECA
 				if (hit) 
 				{
 					Debug.Log("Hit " + hitInfo.transform.gameObject.name);
-
-				} else {
-					Debug.Log("No hit");
 				}
 			}
 		}

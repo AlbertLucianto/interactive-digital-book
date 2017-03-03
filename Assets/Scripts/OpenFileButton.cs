@@ -13,7 +13,7 @@ namespace URECA
 		void Start () {
 			openButton = GetComponent<Button> ();
 
-			openButton.onClick.AddListener(ObjectsLoader.loadObjects);
+			openButton.onClick.AddListener(delegate{ObjectsLoader.loadObjects(this);});
 		}
 	
 	}

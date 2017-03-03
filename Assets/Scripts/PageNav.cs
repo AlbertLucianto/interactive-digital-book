@@ -33,7 +33,7 @@ namespace URECA
 				Debug.Log ("Page out of range, last page is " + XMLDecoder.getNumPages());
 				pageInput.text = XMLDecoder.getNumPages().ToString ();
 			}
-			ObjectsLoader.loadPageToWindow(int.Parse(pageInput.text)-1);
+			ObjectsLoader.showPageOnWindow(int.Parse(pageInput.text)-1);
 		}
 
 		void decPageNumAndLoad(){
@@ -41,7 +41,7 @@ namespace URECA
 				Debug.Log ("This is the first page");
 			} else {
 				pageInput.text = (int.Parse (pageInput.text) - 1).ToString();
-				ObjectsLoader.loadPageToWindow(int.Parse(pageInput.text)-1);
+				ObjectsLoader.showPageOnWindow(int.Parse(pageInput.text)-1);
 			}
 		}
 
@@ -50,7 +50,7 @@ namespace URECA
 				Debug.Log ("Last page is number " + pageInput.text);
 			} else {
 				pageInput.text = (int.Parse (pageInput.text) + 1).ToString();
-				ObjectsLoader.loadPageToWindow(int.Parse(pageInput.text)-1);
+				ObjectsLoader.showPageOnWindow(int.Parse(pageInput.text)-1);
 			}
 		}
 
