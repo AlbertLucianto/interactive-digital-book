@@ -1,17 +1,6 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ObjectsLoader.cs">
-    <Files>
-      <File FileName="Assets/Scripts/ObjectsLoader.cs" Line="24" Column="4" />
-      <File FileName="Assets/Scripts/PageNav.cs" Line="24" Column="53" />
-      <File FileName="Assets/Scripts/OpenFileButton.cs" Line="16" Column="77" />
-      <File FileName="Assets/Scripts/PageLoader.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/VideoXML.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/SelectionObject.cs" Line="19" Column="60" />
-      <File FileName="Assets/Scripts/ModelXML.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ImageXML.cs" Line="1" Column="1" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

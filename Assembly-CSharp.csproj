@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\AssemblyInfo.cs" />
      <Compile Include="Assets\Scripts\ImageXML.cs" />
      <Compile Include="Assets\Scripts\ModelXML.cs" />
+     <Compile Include="Assets\Scripts\MovingTools.cs" />
      <Compile Include="Assets\Scripts\ObjectXML.cs" />
      <Compile Include="Assets\Scripts\ObjectsLoader.cs" />
      <Compile Include="Assets\Scripts\OpenFileButton.cs" />

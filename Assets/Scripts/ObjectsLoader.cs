@@ -42,11 +42,11 @@ namespace URECA
 			foreach (Transform page in canvas.transform) {
 
 				page.gameObject.SetActive (false);
-				Debug.Log ("Hiding " + page.gameObject);
+				//Debug.Log ("Hiding " + page.gameObject);
 
 			}
 
-			Debug.Log ("Showing " + canvas.transform.GetChild (pageNum).gameObject);
+			//Debug.Log ("Showing " + canvas.transform.GetChild (pageNum).gameObject);
 			canvas.transform.GetChild (pageNum).gameObject.SetActive (true);
 		}
 

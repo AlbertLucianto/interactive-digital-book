@@ -49,6 +49,8 @@ namespace URECA
 				gameObjectToAdd.GetComponent<MeshCollider> ().isTrigger = true;
 			}
 
+			gameObjectToAdd.AddComponent<MovingTools> ();
+
 			gameObjectToAdd.transform.SetParent (page.transform, false);
 		}
 
