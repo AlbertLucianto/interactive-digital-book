@@ -42,7 +42,7 @@ namespace URECA
 					RectTransform rectTransform = gameObjectToAdd.GetComponent<RectTransform> ();
 					collider.size = new Vector3 (rectTransform.rect.width, rectTransform.rect.height, 1);
 				} else { // Default size
-					collider.size = new Vector3 (50f / objectXML.getScale().x, 50f / objectXML.getScale().y, 1 / objectXML.getScale().z);
+					collider.size = new Vector3 (50f / objectXML.getScale().x, 50f / objectXML.getScale().y, 50f / objectXML.getScale().z);
 				}
 			} else {
 				gameObjectToAdd.GetComponent<MeshCollider> ().convex = true;
