@@ -21,6 +21,7 @@ namespace URECA
 
 			textUnity.AddComponent<Text>();
 			textUnity.AddComponent<ContentSizeFitter>();
+			textUnity.AddComponent<ColliderTextFitterSize> ();
 
 			Text addText = textUnity.GetComponent<Text> ();
 			ContentSizeFitter textFitter = textUnity.GetComponent<ContentSizeFitter>();

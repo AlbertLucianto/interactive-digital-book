@@ -12,7 +12,7 @@ namespace URECA
 		private static InputField inputFileName;
 		private static GameObject canvas = GameObject.FindWithTag ("Canvas");
 		private static GameObject mainCamera = GameObject.FindWithTag ("MainCamera");
-		private static InputField navPage = GameObject.FindWithTag ("Page").GetComponent<InputField>();
+		private static InputField navPage = GameObject.FindWithTag ("CurPageNum").GetComponent<InputField>();
 
 		public static void loadObjects(MonoBehaviour something) {	// MonoBehaviour something: TRICKY (StartCoroutine needs
 																	// an instance to run, but in static method, it cannot

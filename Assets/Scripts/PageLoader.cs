@@ -49,6 +49,22 @@ namespace URECA
 				gameObjectToAdd.GetComponent<MeshCollider> ().isTrigger = true;
 			}
 
+//			if (!gameObjectToAdd.GetComponent<MeshFilter> ()) {
+//				MeshFilter mesh = gameObjectToAdd.AddComponent<MeshFilter> ();
+//				GameObject go = GameObject.CreatePrimitive (PrimitiveType.Plane);
+//				go.transform.localScale = gameObjectToAdd.transform.localScale;
+//				//MonoBehaviour.Destroy (go);
+//				mesh.sharedMesh = go.GetComponent<MeshFilter> ().mesh;
+//			}
+
+			if (gameObjectToAdd.tag == "Video") {
+				GameObject playButton = GameObject.Instantiate (Resources.Load ("Prefabs/PlayButton") as GameObject);
+				playButton.transform.localScale = Vector3.one;
+				playButton.transform.SetParent (gameObjectToAdd.transform, true);
+				playButton.transform.localPosition = new Vector3(0,1,0);
+				playButton.GetComponent<PlayVideo> ().videoToPlay = gameObjectToAdd;
+			}
+
 			gameObjectToAdd.AddComponent<MovingTools> ();
 
 			gameObjectToAdd.transform.SetParent (page.transform, false);

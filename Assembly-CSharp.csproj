@@ -47,7 +47,12 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\AssemblyInfo.cs" />
+     <Compile Include="Assets\Scripts\BoundBoxes\BoundBoxes_BoundBox.cs" />
+     <Compile Include="Assets\Scripts\BoundBoxes\BoundBoxes_drawLines.cs" />
+     <Compile Include="Assets\Scripts\ColliderTextFitterSize.cs" />
      <Compile Include="Assets\Scripts\ImageXML.cs" />
+     <Compile Include="Assets\Scripts\InteractionManager.cs" />
+     <Compile Include="Assets\Scripts\Interactions\Interaction_ObjectRotatorBySound.cs" />
      <Compile Include="Assets\Scripts\ModelXML.cs" />
      <Compile Include="Assets\Scripts\MovingTools.cs" />
      <Compile Include="Assets\Scripts\ObjectXML.cs" />
@@ -57,11 +62,17 @@
      <Compile Include="Assets\Scripts\PageNav.cs" />
      <Compile Include="Assets\Scripts\PageXML.cs" />
      <Compile Include="Assets\Scripts\PlayVideo.cs" />
+     <Compile Include="Assets\Scripts\PreviewButton.cs" />
      <Compile Include="Assets\Scripts\SelectionObject.cs" />
      <Compile Include="Assets\Scripts\TextXML.cs" />
      <Compile Include="Assets\Scripts\VideoXML.cs" />
      <Compile Include="Assets\Scripts\XMLDecoder.cs" />
      <None Include="Assets\Save_files\Data.xml" />
+     <None Include="Assets\Plugins\MicControl2\UpdateLog.txt" />
+     <None Include="Assets\Plugins\MicControl2\ReadMe.txt" />
+ <Reference Include="Assembly-UnityScript-firstpass">
+ <HintPath>/Users/stevenlucianto/Documents/Unity Projects/URECA/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

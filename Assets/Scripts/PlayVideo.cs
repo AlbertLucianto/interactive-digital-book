@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayVideo : MonoBehaviour {
 
 	private Button playButton;
-
+	public GameObject videoToPlay;
 	// Use this for initialization
 	void Start () {
 		playButton = GetComponent<Button> ();
@@ -16,14 +16,25 @@ public class PlayVideo : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Play () {
-		GameObject a = GameObject.FindWithTag ("Video");
-		Renderer b = a.GetComponent<Renderer> ();
+		Renderer b = videoToPlay.GetComponent<Renderer> ();
 		MovieTexture c = (MovieTexture)b.material.mainTexture;
-		AudioSource d = a.GetComponent<AudioSource> ();
+		AudioSource d = videoToPlay.GetComponent<AudioSource> ();
+		Debug.Log (videoToPlay.name);
 
 		if (c.isReadyToPlay && d.clip.loadState.Equals(AudioDataLoadState.Loaded)) {
-			d.Play ();
-			c.Play ();
+			if (!c.isPlaying) {
+				d.Play ();
+				c.Play ();
+				GetComponentInChildren<Text> ().text = "Pause";
+			} else {
+				d.Pause ();
+				c.Pause ();
+				GetComponentInChildren<Text> ().text = "Play";
+			}
 		}
+
+//		if (c.isReadyToPlay) {
+//			c.Play ();
+//		}
 	}
 }

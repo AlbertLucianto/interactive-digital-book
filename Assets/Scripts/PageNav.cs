@@ -13,7 +13,7 @@ namespace URECA
 
 		// Use this for initialization
 		void Start () {
-			pageInput = GetComponent<InputField>();
+			pageInput = GameObject.FindWithTag("CurPageNum").GetComponent<InputField>();
 			prevPage = GameObject.FindWithTag ("prevPage").GetComponent<Button> ();
 			nextPage = GameObject.FindWithTag ("nextPage").GetComponent<Button> ();
 
@@ -22,6 +22,14 @@ namespace URECA
 			pageInput.onEndEdit.AddListener (delegate{jumpPageAndLoad();});
 			prevPage.onClick.AddListener (decPageNumAndLoad);
 			nextPage.onClick.AddListener (incPageNumAndLoad);
+		}
+
+		void Update(){
+			if (Input.GetKeyDown (KeyCode.RightArrow) || Input.GetKeyDown (KeyCode.DownArrow)) {
+				incPageNumAndLoad ();
+			} else if (Input.GetKeyDown (KeyCode.LeftArrow) || Input.GetKeyDown (KeyCode.UpArrow)) {
+				decPageNumAndLoad ();
+			}
 		}
 
 		void jumpPageAndLoad(){
