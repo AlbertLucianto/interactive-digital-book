@@ -7,7 +7,7 @@ namespace URECA
 {
 	public class PreviewButton : MonoBehaviour {
 
-		private bool inPreview;
+		private static bool inPreview;
 
 		private Button previewButton;
 		private GameObject previewCanvas;
@@ -67,6 +67,10 @@ namespace URECA
 
 				previewCanvas.SetActive (false);
 			}
+		}
+
+		public static bool isInPreview(){
+			return inPreview;
 		}
 	}
 }

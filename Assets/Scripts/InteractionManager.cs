@@ -14,8 +14,7 @@ namespace URECA
 
 			button.onClick.AddListener (addInteractionScript);
 		}
-		
-		// Update is called once per frame
+
 		void addInteractionScript () {
 			SelectionObject.selected.AddComponent<Interaction_ObjectRotatorBySound>();
 		}
