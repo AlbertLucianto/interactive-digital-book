@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 namespace URECA
 {
@@ -24,7 +25,8 @@ namespace URECA
 		private BoundBoxes_drawLines cameralines;
 		
 		private Renderer[] renderers;
-		private MeshFilter[] meshes;
+		private MeshFilter[] meshesFil;
+		private MeshCollider[] meshesCol;
 		
 		private Material[][] Materials;
 		
@@ -42,7 +44,6 @@ namespace URECA
 
 		void Awake () {	
 			renderers = GetComponentsInChildren<Renderer>();
-			meshes = GetComponentsInChildren<MeshFilter>();
 			Materials = new Material[renderers.Length][];
 			for(int i = 0; i < renderers.Length; i++) {
 				Materials[i]= renderers[i].materials;
@@ -52,13 +53,43 @@ namespace URECA
 		
 		void Start () {
 			success = false;
+
+			if (GetComponentInChildren<MeshFilter> ()) {
+				meshesFil = GetComponentsInChildren<MeshFilter> ();
+			} else {
+//				Debug.Log ("tak ada MeshFilter");
+//				GameObject temp = GameObject.CreatePrimitive (PrimitiveType.Cube) as GameObject;
+//				meshes = new MeshFilter[1];
+//				meshes[0] = Component.Instantiate(temp.GetComponent<MeshFilter> ()) as MeshFilter;
+//				Vector3 colliderSize = GetComponent<BoxCollider> ().size;
+//				Vector3 colliderScale = transform.lossyScale;
+//				meshes[0].transform.localScale = new Vector3 (
+//					colliderSize.x * colliderScale.x,
+//					colliderSize.y * colliderScale.y,
+//					colliderSize.z * colliderScale.z
+//				);
+//				meshes[0].transform.position = new Vector3(
+//					transform.position.x,
+//					transform.position.y,
+//					transform.position.z
+//				);
+//				meshes [0].transform.rotation = transform.rotation;
+//				Destroy(temp);
+
+				meshesCol = GetComponentsInChildren<MeshCollider> ();
+			}
+
 			mcamera = Camera.main;
 			cameralines = mcamera.GetComponent<BoundBoxes_drawLines>();
 			init();
 		}
 		
 		public void init() {
-			calculateBounds ();
+			if (GetComponentInChildren<MeshFilter> ()) {
+				calculateBoundsFilter (meshesFil);
+			} else {
+				calculateBoundsColl (meshesCol);
+			}
 			setPoints ();
 			setLines ();
 			if (success) {
@@ -71,8 +102,31 @@ namespace URECA
 				cameralines.setOutlines (lines, lineColor);
 			}
 		}
-		
-		void calculateBounds() {
+
+		void calculateBoundsColl(MeshCollider[] mcAr) {
+			quat = transform.rotation;//object axis AABB
+
+			transform.rotation = Quaternion.Euler(0f,0f,0f);
+			for (int i = 0; i < mcAr.Length; i++) {
+
+				Mesh ms = mcAr [i].sharedMesh;
+				Vector3 tr = mcAr [i].gameObject.transform.position;
+				Vector3 ls = mcAr [i].gameObject.transform.lossyScale;
+				Quaternion lr = mcAr [i].gameObject.transform.rotation;
+				int vc = ms.vertexCount;
+				for (int j = 0; j < vc; j++) {
+					if (i == 0 && j == 0) {
+						bound = new Bounds (tr + lr * Vector3.Scale (ls, ms.vertices [j]), Vector3.zero);
+					} else {
+						bound.Encapsulate (tr + lr * Vector3.Scale (ls, ms.vertices [j]));
+					}
+				}			
+			}
+			transform.rotation = quat;
+			success = true;
+		}
+
+		void calculateBoundsFilter(MeshFilter[] mfAr) {
 			quat = transform.rotation;//object axis AABB
 //			if(renderers[0] && renderers[0].isPartOfStaticBatch) quat = Quaternion.Euler(0f,0f,0f);//world axis
 //
@@ -101,12 +155,18 @@ namespace URECA
 //				}
 //				return;
 //			}
+//
+//			if (meshes.GetType () == typeof(MeshFilter[])) {
+//				ms = Array.ConvertAll (meshes, item => (MeshFilter)item);
+//			}
+				
 			transform.rotation = Quaternion.Euler(0f,0f,0f);
-			for (int i = 0; i < meshes.Length; i++) {
-				Mesh ms = meshes [i].mesh;
-				Vector3 tr = meshes [i].gameObject.transform.position;
-				Vector3 ls = meshes [i].gameObject.transform.lossyScale;
-				Quaternion lr = meshes [i].gameObject.transform.rotation;
+			for (int i = 0; i < mfAr.Length; i++) {
+
+				Mesh ms = mfAr [i].mesh;
+				Vector3 tr = mfAr [i].gameObject.transform.position;
+				Vector3 ls = mfAr [i].gameObject.transform.lossyScale;
+				Quaternion lr = mfAr [i].gameObject.transform.rotation;
 				int vc = ms.vertexCount;
 				for (int j = 0; j < vc; j++) {
 					if (i == 0 && j == 0) {

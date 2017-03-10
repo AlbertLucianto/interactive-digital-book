@@ -19,7 +19,7 @@ public class PlayVideo : MonoBehaviour {
 		Renderer b = videoToPlay.GetComponent<Renderer> ();
 		MovieTexture c = (MovieTexture)b.material.mainTexture;
 		AudioSource d = videoToPlay.GetComponent<AudioSource> ();
-		Debug.Log (videoToPlay.name);
+//		Debug.Log (videoToPlay.name);
 
 		if (c.isReadyToPlay && d.clip.loadState.Equals(AudioDataLoadState.Loaded)) {
 			if (!c.isPlaying) {
