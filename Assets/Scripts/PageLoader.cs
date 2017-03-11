@@ -101,21 +101,24 @@ namespace URECA
 			Bounds bound;
 			Quaternion quat = go.transform.rotation;
 			Vector3 pos = go.transform.position;
+			Vector3 scl = go.transform.localScale;
 
 			go.transform.rotation = Quaternion.Euler (0f, 0f, 0f);
 			go.transform.position = Vector3.zero;
+			go.transform.localScale = Vector3.one;
 
 			if (go.GetComponentsInChildren<MeshFilter> ().Length > 0) {
 				MeshFilter[] mf = go.GetComponentsInChildren<MeshFilter> ();
 
 				for (int i = 0; i < mf.Length; i++) {
 					Mesh ms = mf [i].mesh;
+					Vector3 tr = mf [i].gameObject.transform.localPosition;
 					int vc = ms.vertexCount;
 					for (int j = 0; j < vc; j++) {
 						if (i == 0 && j == 0) {
 							bound = new Bounds (Vector3.zero, Vector3.zero);
 						} else {
-							bound.Encapsulate (ms.vertices [j]);
+							bound.Encapsulate (tr + ms.vertices [j]);
 						}
 					}
 				}
@@ -124,21 +127,24 @@ namespace URECA
 				bound = new Bounds (Vector3.zero, new Vector3(
 					rect.rect.width,
 					rect.rect.height,
-					1
+					2
 				));
 			}
 
+			Vector3 offCenter = bound.center;
+
 			go.transform.rotation = quat;
 			go.transform.position = pos;
+			go.transform.localScale = scl;
 
-			Vector3 topFrontRight = Vector3.Scale(bound.extents, new Vector3(1, 1, 1)); 
-			Vector3 topFrontLeft = Vector3.Scale(bound.extents, new Vector3(-1, 1, 1)); 
-			Vector3 topBackLeft = Vector3.Scale(bound.extents, new Vector3(-1, 1, -1));
-			Vector3 topBackRight = Vector3.Scale(bound.extents, new Vector3(1, 1, -1)); 
-			Vector3 bottomFrontRight = Vector3.Scale(bound.extents, new Vector3(1, -1, 1)); 
-			Vector3 bottomFrontLeft = Vector3.Scale(bound.extents, new Vector3(-1, -1, 1)); 
-			Vector3 bottomBackLeft = Vector3.Scale(bound.extents, new Vector3(-1, -1, -1));
-			Vector3 bottomBackRight = Vector3.Scale(bound.extents, new Vector3(1, -1, -1));
+			Vector3 topFrontRight = offCenter + Vector3.Scale(bound.extents, new Vector3(1, 1, 1)); 
+			Vector3 topFrontLeft = offCenter + Vector3.Scale(bound.extents, new Vector3(-1, 1, 1)); 
+			Vector3 topBackLeft = offCenter + Vector3.Scale(bound.extents, new Vector3(-1, 1, -1));
+			Vector3 topBackRight = offCenter + Vector3.Scale(bound.extents, new Vector3(1, 1, -1)); 
+			Vector3 bottomFrontRight = offCenter + Vector3.Scale(bound.extents, new Vector3(1, -1, 1)); 
+			Vector3 bottomFrontLeft = offCenter + Vector3.Scale(bound.extents, new Vector3(-1, -1, 1)); 
+			Vector3 bottomBackLeft = offCenter + Vector3.Scale(bound.extents, new Vector3(-1, -1, -1));
+			Vector3 bottomBackRight = offCenter + Vector3.Scale(bound.extents, new Vector3(1, -1, -1));
 			Vector3[] corners = new Vector3[]{
 				topFrontRight, topBackRight, topFrontLeft,
 				topBackRight, topBackLeft, topFrontLeft,

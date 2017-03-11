@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 namespace URECA
 {
@@ -30,6 +31,8 @@ namespace URECA
 
 			newScale = previewCanvas.GetComponent<RectTransform> ().rect.width /
 				canvas.GetComponent<RectTransform> ().rect.width;
+//				previewCanvas.GetComponent<RectTransform> ().rect.height/
+//				canvas.GetComponent<RectTransform> ().rect.height);
 
 			previewButton = GetComponent<Button> ();
 			previewButton.onClick.AddListener (showHidePreview);
