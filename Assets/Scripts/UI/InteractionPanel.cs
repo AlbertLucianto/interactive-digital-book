@@ -40,6 +40,17 @@ public class InteractionPanel : MonoBehaviour {
 
 	private void removeInteractionListener()
 	{
+		if (SelectionObject.selected == null)
+			return;
+		switch (combobox.currentValue) {
+		case "Interaction_ObjectRotatorBySound":
+			Interaction_ObjectRotatorBySound component = SelectionObject.selected.GetComponent<Interaction_ObjectRotatorBySound> ();
+			if (component != null)
+				Destroy (component);
+			break;
+		default:
+			break;
+		}			
 
 	}
 
