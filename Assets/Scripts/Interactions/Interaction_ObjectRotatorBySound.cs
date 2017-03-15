@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace URECA
 {
-	public class Interaction_ObjectRotatorBySound : MonoBehaviour {
+	public class Interaction_ObjectRotatorBySound : InteractionBase {
 		public float speed = 10f;
 		private MicControl micControl;
 		// Use this for initialization

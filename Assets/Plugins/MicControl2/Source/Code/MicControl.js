@@ -399,7 +399,7 @@ audioSource.loop = true;
 	var fileInfo = info.GetFiles();
 	
 		if(!File.Exists(Application.dataPath+"/Gizmos/MicControlGizmo.tif")){
-			File.Copy(Application.dataPath+"/Plugins/MicControl2/Source/MicControlGizmo.tif",Application.dataPath+"/Gizmos/MicControlGizmo.tif");
+			File.Copy(Application.dataPath+"/MicControl2/Source/MicControlGizmo.tif",Application.dataPath+"/Gizmos/MicControlGizmo.tif");
 				}
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 		

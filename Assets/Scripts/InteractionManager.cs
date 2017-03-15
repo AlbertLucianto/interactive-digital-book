@@ -18,7 +18,8 @@ namespace URECA
 
 		void addInteractionScript () {
 //			var scriptName =  GameObject.GetComponent(Type.GetType(button.GetComponentInChildren<Text> ().text));
-			SelectionObject.selected.AddComponent<Interaction_ObjectRotatorBySound>();
+			if(SelectionObject.selected)
+				SelectionObject.selected.AddComponent<Interaction_ObjectRotatorBySound>();
 		}
 	}
 }

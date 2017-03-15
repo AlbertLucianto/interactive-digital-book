@@ -31,7 +31,7 @@ namespace URECA
 						StartCoroutine (selectAfterDestroy ());
 					}
 
-//					Debug.Log ("Hit LMB " + hitInfo.transform.gameObject.name);
+					Debug.Log ("Hit LMB " + hitInfo.transform.gameObject.name);
 
 				} else {
 					

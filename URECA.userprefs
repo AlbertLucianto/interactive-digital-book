@@ -1,17 +1,18 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PageLoader.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UI/ShowAndDisappear.cs">
     <Files>
-      <File FileName="Assets/Scripts/PageLoader.cs" Line="133" Column="33" />
-      <File FileName="Assets/Scripts/PreviewButton.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ColliderTextFitterSize.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Interactions/Interaction_ObjectRotatorBySound.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ObjectsLoader.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/MovingTools.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/SelectionObject.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PageNav.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/BoundBoxes/BoundBoxes_BoundBox.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PlayVideo.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/InteractionManager.cs" Line="22" Column="57" />
+      <File FileName="Assets/Scripts/VideoXML.cs" Line="35" Column="1" />
+      <File FileName="Assets/UIWidgets/Sample Assets/Combobox/KeyValueListViewDataSource.cs" Line="16" Column="22" />
+      <File FileName="Assets/Scripts/InteractionTypeForCombo.cs" Line="12" Column="4" />
+      <File FileName="Assets/Scripts/Interactions/Interaction_ObjectRotatorBySound.cs" Line="3" Column="19" />
+      <File FileName="Assets/Scripts/Interactions/InteractionBase.cs" Line="6" Column="30" />
+      <File FileName="Assets/Scripts/Interactions/Interation_ZoomByFigure.cs" Line="3" Column="16" />
+      <File FileName="Assets/UIWidgets/Sample Assets/Combobox/KeyValueListView.cs" Line="6" Column="2" />
+      <File FileName="Assets/Scripts/UI/InteractionPanel.cs" Line="6" Column="2" />
+      <File FileName="Assets/UIWidgets/Sample Assets/Combobox/KeyValueCombobox.cs" Line="10" Column="8" />
+      <File FileName="Assets/Scripts/UI/ShowAndDisappear.cs" Line="21" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
