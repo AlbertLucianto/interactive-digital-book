@@ -44,7 +44,7 @@ namespace URECA
 			ObjectsLoader.showPageOnWindow(int.Parse(pageInput.text)-1);
 		}
 
-		void decPageNumAndLoad(){
+		public void decPageNumAndLoad(){
 			if (int.Parse (pageInput.text) <= 1) {
 				Debug.Log ("This is the first page");
 			} else {
@@ -53,7 +53,7 @@ namespace URECA
 			}
 		}
 
-		void incPageNumAndLoad(){
+		public void incPageNumAndLoad(){
 			if (XMLDecoder.getNumPages () <= int.Parse (pageInput.text)) {
 				Debug.Log ("Last page is number " + pageInput.text);
 			} else {
