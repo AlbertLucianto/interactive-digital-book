@@ -53,6 +53,7 @@ namespace URECA
 				canvas.transform.localScale = new Vector3 (newScale, newScale, newScale);
 
 				gameObject.transform.SetAsLastSibling ();
+				LeapModeController.instance ().mode = LeapMode.RotatingOjbect;
 
 				workingWindow.SetActive (false);
 			} else {

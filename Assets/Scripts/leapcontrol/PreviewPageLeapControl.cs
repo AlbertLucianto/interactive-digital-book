@@ -15,6 +15,7 @@ public class PreviewPageLeapControl : MonoBehaviour {
 	Frame thisFrame = null;
 	// Use this for initialization
 	void Start () {
+		hc = HandController.Main;
 		hc.GetLeapController().EnableGesture(Gesture.GestureType.TYPECIRCLE);
 		hc.GetLeapController().EnableGesture(Gesture.GestureType.TYPESWIPE);
 		hc.GetLeapController().EnableGesture(Gesture.GestureType.TYPE_SCREEN_TAP);
@@ -30,7 +31,7 @@ public class PreviewPageLeapControl : MonoBehaviour {
 		GestureList gestures = this.currentFrame.Gestures();
 		foreach (Gesture g in gestures)
 		{
-			if (g.Type == Gesture.GestureType.TYPESWIPE)
+			if (g.Type == Gesture.GestureType.TYPESWIPE && LeapModeController.instance ().mode == LeapMode.NoRotatingOjbectInScene)
 			{
 				if (_interval < SWIPE_MIN_INTERVAL)
 					return;

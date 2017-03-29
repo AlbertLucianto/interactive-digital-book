@@ -30,6 +30,10 @@ public class InteractionPanel : MonoBehaviour {
 				if (SelectionObject.selected.GetComponent<Interaction_ObjectRotatorBySound> () == null)
 					SelectionObject.selected.AddComponent<Interaction_ObjectRotatorBySound> ();
 				break;
+			case "Interation_ZoomByFigure":
+				if (SelectionObject.selected.GetComponent<Interation_ZoomByFigure> () == null)
+					SelectionObject.selected.AddComponent<Interation_ZoomByFigure> ();
+				break;
 			default:
 				break;
 			}				
@@ -47,6 +51,11 @@ public class InteractionPanel : MonoBehaviour {
 			Interaction_ObjectRotatorBySound component = SelectionObject.selected.GetComponent<Interaction_ObjectRotatorBySound> ();
 			if (component != null)
 				Destroy (component);
+			break;
+		case "Interation_ZoomByFigure":
+			Interation_ZoomByFigure c = SelectionObject.selected.GetComponent<Interation_ZoomByFigure> ();
+			if (c != null)
+				Destroy (c);
 			break;
 		default:
 			break;

@@ -16,7 +16,7 @@ namespace URECA
 		void Update () {
 			if (PreviewButton.isInPreview()) {
 				float loudness = micControl.loudness;
-				if (loudness < 0.5)
+				if (loudness < 1f)
 					loudness = 0;
 				transform.eulerAngles = new Vector3 (transform.eulerAngles.x, transform.eulerAngles.y + Time.deltaTime * loudness * speed, transform.eulerAngles.z);
 			}
