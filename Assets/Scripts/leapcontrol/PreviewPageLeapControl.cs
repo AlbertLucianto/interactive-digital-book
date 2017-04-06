@@ -22,6 +22,33 @@ public class PreviewPageLeapControl : MonoBehaviour {
 		//hc.GetLeapController().Config.SetFloat ("Gesture.Swipe.MinLength", 200.0f);
 		//hc.GetLeapController().Config.SetFloat("Gesture.Swipe.MinVelocity", 750f);
 	}
+
+	void OnEnable()
+	{
+		EventDispatcher.AddEventListener (SystemEvent.VoiceResult, voiceHandler);
+	}
+
+	void OnDisable()
+	{
+		EventDispatcher.RemoveEventListener (SystemEvent.VoiceResult, voiceHandler);
+	}
+
+
+
+	private void voiceHandler(EventObject obj)
+	{
+		string result = obj.param as string;
+		Debug.Log (result);
+		if (result.Contains("next")|| result.Contains("right"))
+		{
+			pageNav.incPageNumAndLoad ();
+
+		}
+		else if(result.Contains("previous") || result.Contains("left"))
+		{
+			pageNav.decPageNumAndLoad ();
+		}
+	}
 	
 	// Update is called once per frame
 	void Update()

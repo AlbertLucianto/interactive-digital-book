@@ -37,6 +37,7 @@ public class VoiceRecognition : MonoBehaviour
     private AudioSource aud;
     public AudioClip listeningSound;
 
+
     private readonly JsonSerializerSettings jsonSettings = new JsonSerializerSettings
     { 
         NullValueHandling = NullValueHandling.Ignore,
@@ -81,14 +82,18 @@ public class VoiceRecognition : MonoBehaviour
                 
                 Debug.Log(outText);
 				string result = e.Response.Result.ResolvedQuery;
+				EventDispatcher.TriggerEvents(SystemEvent.VoiceResult,result);
 				if (result.Contains("next")|| result.Contains("right"))
 				{
 					Debug.Log("i am told to go to next page");
+
 				}
 				else if(result.Contains("previous") || result.Contains("left"))
 				{
 					Debug.Log("i am told to go to prev page");
+
 				}
+
                 
             } else
             {

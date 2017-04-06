@@ -94,6 +94,13 @@ public class VoiceGestureController : MonoBehaviour {
 				}
 			}
 		}
-
+		else
+		{
+			if(_started)
+			{
+				_regconition.StopListening ();
+				_started = false;
+			}
+		}
 	}
 }
