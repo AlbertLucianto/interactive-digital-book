@@ -1,15 +1,34 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
+using System.Xml.Serialization;
 
 namespace URECA
 {
 	public abstract class ObjectXML
 	{
+		[XmlAttribute("id")]
 		private string id;
-		private Vector3 position;
-		private Vector3 scale;
-		private Quaternion rotation;
+		[XmlAttribute("positionX")]
+		public float positionX;
+		[XmlAttribute("positionY")]
+		public float positionY;
+		[XmlAttribute("positionZ")]
+		public float positionZ;
+		[XmlAttribute("scaleX")]
+		public float scaleX;
+		[XmlAttribute("scaleY")]
+		public float scaleY;
+		[XmlAttribute("scaleZ")]
+		public float scaleZ;
+		[XmlAttribute("rotationX")]
+		public float rotationX;
+		[XmlAttribute("rotationY")]
+		public float rotationY;
+		[XmlAttribute("rotationZ")]
+		public float rotationZ;
+		[XmlIgnore]
+		private ArrayList interactions;
 		/*private int top;
 		private int bottom;
 		private int left;
@@ -31,40 +50,113 @@ namespace URECA
 
 		//============== Position ==============
 
-		public void setPosition(float x=0.0f, float y=0.0f, float z=0.0f)
+		public void setPositionX(float x=0.0f)
 		{
-			position = new Vector3(x,y,z);
+			positionX = x;
 		}
 
-		public Vector3 getPosition()
+		public float getPositionX()
 		{
-			return position;
+			return positionX;
+		}
+
+		public void setPositionY(float y=0.0f)
+		{
+			positionY = y;
+		}
+
+		public float getPositionY()
+		{
+			return positionY;
+		}
+		public void setPositionZ(float z=0.0f)
+		{
+			positionZ = z;
+		}
+
+		public float getPositionZ()
+		{
+			return positionZ;
 		}
 
 		//============== Scale ==============
 
-		public void setScale(float x=0.0f, float y=0.0f, float z=0.0f)
+		public void setScaleX(float x=0.0f)
 		{
-			scale = new Vector3(x,y,z);
+			scaleX = x;
 		}
 
-		public Vector3 getScale()
+		public float getScaleX()
 		{
-			return scale;
+			return scaleX;
+		}
+
+		public void setScaleY(float y=0.0f)
+		{
+			scaleY = y;
+		}
+
+		public float getScaleY()
+		{
+			return scaleY;
+		}
+		public void setScaleZ(float z=0.0f)
+		{
+			scaleZ = z;
+		}
+
+		public float getScaleZ()
+		{
+			return scaleZ;
 		}
 
 		//============== Rotation ==============
 
-		public void setRotation(float x=0.0f, float y=0.0f, float z=0.0f)
+		public void setRotationX(float x=0.0f)
 		{
-			rotation = Quaternion.Euler(new Vector3(x,y,z));
+			rotationX = x;
 		}
 
-		public Quaternion getRotation()
+		public float getRotationX()
 		{
-			return rotation;
+			return rotationX;
 		}
 
+		public void setRotationY(float y=0.0f)
+		{
+			rotationY = y;
+		}
+
+		public float getRotationY()
+		{
+			return rotationY;
+		}
+		public void setRotationZ(float z=0.0f)
+		{
+			rotationZ = z;
+		}
+
+		public float getRotationZ()
+		{
+			return rotationZ;
+		}
+
+		//============== Interactions ==============
+
+		public void addInteractions(string interaction)
+		{
+			interactions.Add(interaction);
+		}
+
+		public void clearInteractions()
+		{
+			interactions.Clear();
+		}
+
+		public ArrayList getInteractions()
+		{
+			return interactions;
+		}
 	}
 }
 

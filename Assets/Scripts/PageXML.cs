@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using System.Xml;
 using System.Xml.Schema;
+using System.Xml.Serialization;
 using System.Reflection;
 
 using UnityEngine;
@@ -11,16 +12,20 @@ namespace URECA
 {
 	public class PageXML
 	{
+		[XmlArray("page")]
+		[XmlArrayItem("text", typeof(TextXML))]
+		[XmlArrayItem("image", typeof(ImageXML))]
+		[XmlArrayItem("video", typeof(VideoXML))]
+		[XmlArrayItem("model", typeof(ModelXML))]
 		public List<ObjectXML> listObjects = new List<ObjectXML> ();
+		[XmlIgnore]
 		public int pageNum;
-
-		public float positionX, positionY, positionZ;
-		float scaleX, scaleY, scaleZ;
-		float rotationX, rotationY, rotationZ;
 
 		ObjectXML addToList; //Every child of ObjectXML will be passed, then set Transform attributes
 
 //		static object[] arguments = new object[1];
+
+		public PageXML(){}
 
 		public PageXML(int num){
 			pageNum = num;
@@ -59,21 +64,17 @@ namespace URECA
 
 				addToList.setId (element.Attribute ("id").Value);
 
-				positionX = float.Parse (element.Attribute ("positionX").Value);
-				positionY = float.Parse (element.Attribute ("positionY").Value);
-				positionZ = float.Parse (element.Attribute ("positionZ").Value);
+				addToList.setPositionX(float.Parse (element.Attribute ("positionX").Value));
+				addToList.setPositionY(float.Parse (element.Attribute ("positionY").Value));
+				addToList.setPositionZ(float.Parse (element.Attribute ("positionZ").Value));
 
-				scaleX = float.Parse (element.Attribute ("scaleX").Value);
-				scaleY = float.Parse (element.Attribute ("scaleY").Value);
-				scaleZ = float.Parse (element.Attribute ("scaleZ").Value);
+				addToList.setScaleX(float.Parse (element.Attribute ("scaleX").Value));
+				addToList.setScaleY(float.Parse (element.Attribute ("scaleY").Value));
+				addToList.setScaleZ(float.Parse (element.Attribute ("scaleZ").Value));
 
-				rotationX = float.Parse (element.Attribute ("rotationX").Value);
-				rotationY = float.Parse (element.Attribute ("rotationY").Value);
-				rotationZ = float.Parse (element.Attribute ("rotationZ").Value);
-
-				addToList.setPosition (positionX, positionY, positionZ);
-				addToList.setScale (scaleX, scaleY, scaleZ);
-				addToList.setRotation (rotationX, rotationY, rotationZ);
+				addToList.setRotationX(float.Parse (element.Attribute ("rotationX").Value));
+				addToList.setRotationY(float.Parse (element.Attribute ("rotationY").Value));
+				addToList.setRotationZ(float.Parse (element.Attribute ("rotationZ").Value));
 
 				listObjects.Add(addToList);
 			}

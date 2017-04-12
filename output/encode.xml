@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<ArrayOfPageXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PageXML>
+    <page>
+      <text positionX="477.976563" positionY="232.014069" positionZ="-664" scaleX="1" scaleY="1" scaleZ="1" rotationX="0" rotationY="0" rotationZ="0" />
+      <text positionX="477.976563" positionY="245.75235" positionZ="-664" scaleX="1" scaleY="1" scaleZ="1" rotationX="0" rotationY="0" rotationZ="0" />
+      <image positionX="532.9297" positionY="264.985931" positionZ="-664" scaleX="0.3" scaleY="0.3" scaleZ="0.3" rotationX="0" rotationY="0" rotationZ="0" />
+      <model positionX="423.023438" positionY="245.75235" positionZ="-664" scaleX="4000" scaleY="4000" scaleZ="4000" rotationX="-0.258819073" rotationY="0" rotationZ="0" />
+      <model positionX="486.219543" positionY="204.5375" positionZ="-691.476563" scaleX="30" scaleY="30" scaleZ="30" rotationX="0" rotationY="0" rotationZ="0" />
+      <image positionX="409.285156" positionY="190.79921" positionZ="-664" scaleX="0.1" scaleY="0.1" scaleZ="0.1" rotationX="0" rotationY="0" rotationZ="0" />
+      <video positionX="532.9297" positionY="190.79921" positionZ="-666.7477" scaleX="20" scaleY="1" scaleZ="20" rotationX="-3.09086232E-08" rotationY="0.7071068" rotationZ="-0.7071068" />
+      <text positionX="395.546875" positionY="286.967224" positionZ="-664" scaleX="1" scaleY="1" scaleZ="1" rotationX="0" rotationY="0" rotationZ="0" />
+    </page>
+  </PageXML>
+  <PageXML>
+    <page>
+      <image positionX="423.023438" positionY="190.79921" positionZ="-664" scaleX="0.3" scaleY="0.3" scaleZ="0.3" rotationX="0" rotationY="0" rotationZ="0" />
+      <model positionX="532.9297" positionY="232.014069" positionZ="-664" scaleX="4000" scaleY="4000" scaleZ="4000" rotationX="0" rotationY="0" rotationZ="0" />
+      <model positionX="423.023438" positionY="259.490631" positionZ="-664" scaleX="50" scaleY="50" scaleZ="50" rotationX="0" rotationY="0" rotationZ="0" />
+      <video positionX="477.976563" positionY="259.490631" positionZ="-666.7477" scaleX="20" scaleY="1" scaleZ="20" rotationX="-3.09086232E-08" rotationY="0.7071068" rotationZ="-0.7071068" />
+      <text positionX="395.546875" positionY="286.9672" positionZ="-664" scaleX="1" scaleY="1" scaleZ="1" rotationX="0" rotationY="0" rotationZ="0" />
+    </page>
+  </PageXML>
+  <PageXML>
+    <page>
+      <text positionX="409.285156" positionY="273.2289" positionZ="-664" scaleX="1" scaleY="1" scaleZ="1" rotationX="0" rotationY="0" rotationZ="0" />
+      <text positionX="409.285156" positionY="259.490631" positionZ="-664" scaleX="1" scaleY="1" scaleZ="1" rotationX="0" rotationY="0" rotationZ="0" />
+      <text positionX="409.285156" positionY="245.75235" positionZ="-664" scaleX="1" scaleY="1" scaleZ="1" rotationX="0" rotationY="0" rotationZ="0" />
+      <text positionX="436.761719" positionY="232.014069" positionZ="-664" scaleX="1" scaleY="1" scaleZ="1" rotationX="0" rotationY="0" rotationZ="0" />
+      <text positionX="395.546875" positionY="286.9672" positionZ="-664" scaleX="1" scaleY="1" scaleZ="1" rotationX="0" rotationY="0" rotationZ="0" />
+    </page>
+  </PageXML>
+</ArrayOfPageXML>
