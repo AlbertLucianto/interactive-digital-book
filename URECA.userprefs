@@ -1,18 +1,16 @@
-﻿<Properties StartupItem="Assembly-CSharp.csproj">
+﻿<Properties StartupItem="Assembly-CSharp.csproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UI/ShowAndDisappear.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Interactions/VoiceGestureController.cs">
     <Files>
-      <File FileName="Assets/Scripts/InteractionManager.cs" Line="22" Column="57" />
-      <File FileName="Assets/Scripts/VideoXML.cs" Line="35" Column="1" />
-      <File FileName="Assets/UIWidgets/Sample Assets/Combobox/KeyValueListViewDataSource.cs" Line="16" Column="22" />
-      <File FileName="Assets/Scripts/InteractionTypeForCombo.cs" Line="12" Column="4" />
-      <File FileName="Assets/Scripts/Interactions/Interaction_ObjectRotatorBySound.cs" Line="3" Column="19" />
-      <File FileName="Assets/Scripts/Interactions/InteractionBase.cs" Line="6" Column="30" />
-      <File FileName="Assets/Scripts/Interactions/Interation_ZoomByFigure.cs" Line="3" Column="16" />
-      <File FileName="Assets/UIWidgets/Sample Assets/Combobox/KeyValueListView.cs" Line="6" Column="2" />
-      <File FileName="Assets/Scripts/UI/InteractionPanel.cs" Line="6" Column="2" />
-      <File FileName="Assets/UIWidgets/Sample Assets/Combobox/KeyValueCombobox.cs" Line="10" Column="8" />
-      <File FileName="Assets/Scripts/UI/ShowAndDisappear.cs" Line="21" Column="23" />
+      <File FileName="Assets/Scripts/VoiceRecognition.cs" Line="80" Column="1" />
+      <File FileName="Assets/Scripts/Interactions/Interaction_ObjectRotatorBySound.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Interactions/Interation_ZoomByFigure.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/SelectionObject.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/leapcontrol/PreviewPageLeapControl.cs" Line="33" Column="19" />
+      <File FileName="Assets/Scripts/Interactions/VoiceGestureController.cs" Line="103" Column="5" />
+      <File FileName="Assets/ApiAiSDK/ApiAiUnity.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayVideo.cs" Line="31" Column="58" />
+      <File FileName="Assets/Scripts/EventFramework/EventDispatcher.cs" Line="32" Column="24" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
