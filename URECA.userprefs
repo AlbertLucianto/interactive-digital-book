@@ -1,16 +1,22 @@
-﻿<Properties StartupItem="Assembly-CSharp.csproj" RefactoringSettings.EnableRefactorings="True">
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Interactions/VoiceGestureController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\XMLEncoder.cs">
     <Files>
-      <File FileName="Assets/Scripts/VoiceRecognition.cs" Line="80" Column="1" />
-      <File FileName="Assets/Scripts/Interactions/Interaction_ObjectRotatorBySound.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Interactions/Interation_ZoomByFigure.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/SelectionObject.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/leapcontrol/PreviewPageLeapControl.cs" Line="33" Column="19" />
-      <File FileName="Assets/Scripts/Interactions/VoiceGestureController.cs" Line="103" Column="5" />
-      <File FileName="Assets/ApiAiSDK/ApiAiUnity.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PlayVideo.cs" Line="31" Column="58" />
-      <File FileName="Assets/Scripts/EventFramework/EventDispatcher.cs" Line="32" Column="24" />
+      <File FileName="Assets\Scripts\SaveButton.cs" Line="15" Column="93" />
+      <File FileName="Assets\Scripts\ObjectSaver.cs" Line="118" Column="17" />
+      <File FileName="Assets\Scripts\OpenFileButton.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ObjectsLoader.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\BoundBoxes\BoundBoxes_drawLines.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\TextXML.cs" Line="11" Column="33" />
+      <File FileName="Assets\Scripts\PageLoader.cs" Line="35" Column="136" />
+      <File FileName="Assets\Scripts\ImageXML.cs" Line="9" Column="33" />
+      <File FileName="Assets\Scripts\ModelXML.cs" Line="10" Column="33" />
+      <File FileName="Assets\Scripts\VideoXML.cs" Line="2" Column="26" />
+      <File FileName="Assets\Save_files\Data.xml" Line="5" Column="20" />
+      <File FileName="Assets\Scripts\ObjectXML.cs" Line="4" Column="32" />
+      <File FileName="Assets\Scripts\XMLEncoder.cs" Line="22" Column="51" />
+      <File FileName="Assets\Scripts\PageXML.cs" Line="20" Column="63" />
+      <File FileName="Assets\Scripts\XMLDecoder.cs" Line="5" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

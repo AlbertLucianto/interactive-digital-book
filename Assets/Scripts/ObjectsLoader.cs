@@ -68,4 +68,4 @@ namespace URECA
 			navPage.text = "1";
 		}
 	}
-}
+ }

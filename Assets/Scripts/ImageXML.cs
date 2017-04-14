@@ -2,11 +2,15 @@
 using System.Collections;
 using UnityEngine.UI;
 using System.IO;
+using System.Xml.Serialization;
 
 namespace URECA
 {
-	class ImageXML: ObjectXML
+	[XmlInclude(typeof(ObjectXML))]
+	public class ImageXML: ObjectXML
 	{
+		[XmlElement("source")]
+		[XmlAttribute("href")]
 		private string source;
 		private string description;
 
@@ -17,6 +21,7 @@ namespace URECA
 
 			imageUnity.AddComponent<Image> ();
 			//imageUnity.AddComponent<RectTransform> ();
+			imageUnity.tag = "Image";
 
 			Image img = imageUnity.GetComponent("Image") as Image;
 			RectTransform imgTransform = imageUnity.GetComponent("RectTransform") as RectTransform;
@@ -24,6 +29,16 @@ namespace URECA
 			Texture2D tex = LoadPNG (source);
 			img.sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0, 0));
 			imgTransform.sizeDelta = new Vector2 (tex.width, tex.height);
+
+			GameObject imageSource = new GameObject();
+			imageSource.name = this.getSource ();
+			imageSource.tag = "Source";
+			imageSource.transform.SetParent (imageUnity.transform, false);
+
+			GameObject imageDesc = new GameObject();
+			imageDesc.name = this.getDescription ();
+			imageDesc.tag = "Description";
+			imageDesc.transform.SetParent (imageUnity.transform, false);
 
 			return imageUnity;
 		}

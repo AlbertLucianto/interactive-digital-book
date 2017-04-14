@@ -12,6 +12,7 @@ namespace URECA
 
 		public PageLoader(int num){
 			page.name = "Page" + num.ToString ();
+			page.tag = "Page";
 		}
 
 		public void addObjectsToPage(PageXML pageXML){
@@ -29,9 +30,9 @@ namespace URECA
 
 			gameObjectToAdd.name = objectXML.getId();
 
-			gameObjectToAdd.transform.position = objectXML.getPosition ();
-			gameObjectToAdd.transform.localScale = objectXML.getScale ();
-			gameObjectToAdd.transform.rotation = objectXML.getRotation ();
+			gameObjectToAdd.transform.position = new Vector3(objectXML.getPositionX (),objectXML.getPositionY (),objectXML.getPositionZ ());
+			gameObjectToAdd.transform.localScale = new Vector3(objectXML.getScaleX (),objectXML.getScaleY (),objectXML.getScaleZ ());
+			gameObjectToAdd.transform.rotation = Quaternion.Euler(objectXML.getRotationX (),objectXML.getRotationY (),objectXML.getRotationZ ());
 
 //			if (!gameObjectToAdd.GetComponent<MeshCollider> ()) {
 //				gameObjectToAdd.AddComponent<BoxCollider> ();

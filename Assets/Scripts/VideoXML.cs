@@ -2,11 +2,15 @@
 using System.Collections;
 using UnityEngine.UI;
 using System.IO;
+using System.Xml.Serialization;
 
 namespace URECA
 {
-	class VideoXML: ObjectXML
+	[XmlInclude(typeof(ObjectXML))]
+	public class VideoXML: ObjectXML
 	{
+		[XmlElement("source")]
+		[XmlAttribute("href")]
 		private string source;
 		private string description;
 
@@ -21,7 +25,6 @@ namespace URECA
 
 			videoUnity.AddComponent<RectTransform> ();
 			videoUnity.AddComponent<AudioSource> ();
-
 //			Collider toRemove = videoUnity.GetComponent<Collider> ();
 //			Debug.Log (toRemove);
 //			MonoBehaviour.Destroy (toRemove); // Will later use BoxCollider2D for all kind of objects
@@ -29,22 +32,31 @@ namespace URECA
 
 			Renderer getRender = videoUnity.GetComponent<Renderer>();
 			AudioSource getAudio = videoUnity.GetComponent<AudioSource> ();
-
-			var www = new WWW("file://" + Application.dataPath + "/" + source);
-			//Debug.Log ("file://" + Application.dataPath + source);
+			var www = new WWW("file:///" + Application.dataPath + "/" + source);
+			//Debug.Log ("file:///" + Application.dataPath + source);
 			MovieTexture movieTexture = www.movie;
 
 			if (movieTexture.isReadyToPlay) {
-				Debug.Log ("Loading movie");
-			};
+				Debug.Log ("Loading movie " + "file://" + Application.dataPath + "/" + source);
+			}
 				
-			getRender.material.mainTexture = movieTexture;
+			getRender.material.mainTexture = movieTexture; 
 
 //			if (movieTexture.audioClip.loadState == AudioDataLoadState.Loaded) {
 //				Debug.Log ("Audio is ready");
 //			}
 
 			getAudio.clip = movieTexture.audioClip;
+
+			GameObject videoSource = new GameObject();
+			videoSource.name = this.getSource ();
+			videoSource.tag = "Source";
+			videoSource.transform.SetParent (videoUnity.transform, false);
+
+			GameObject videoDesc = new GameObject();
+			videoDesc.name = this.getDescription ();
+			videoDesc.tag = "Description";
+			videoDesc.transform.SetParent (videoUnity.transform, false);
 
 			return videoUnity;
 		}
