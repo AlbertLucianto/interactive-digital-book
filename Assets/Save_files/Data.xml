@@ -65,17 +65,17 @@
 <pages>
 	<page>
 		<text id="0">
-			<content>Hello my name is Albert</content>
+			<content>Hello my name is Huang Zhe</content>
 		</text>
 		<text id="1" font="DIN RegularAlternate" fontStyle="Regular" fontSize="8" lineSpace="15" positionY="50">
 			<content>
-		    Hello my name is Keefe.
-		    I am currently studying Computer Science.
+		    Hello my name is Huang Zhe.
+		    I am currently studying in School of Computer Science.
 		    </content>
 		</text>
 		<image id="2" scaleX="0.3" scaleY="0.3" scaleZ="0.3" positionY="120" positionX="200">
 			<source href="Assets/Resources/Images/image1.jpg"></source>
-			<description>Picture of Albert</description>
+			<description>Picture of sample</description>
 		</image>
 		<model id="3" scaleX="4000" scaleY="4000" scaleZ="4000" positionX="-200" positionY="50" rotationX="-30">
 			<source href="Models/Glass"></source>
@@ -87,11 +87,11 @@
 		</model>
 		<image id="5" scaleX="0.1" scaleY="0.1" scaleZ="0.1" positionY="-150" positionX="-250">
 			<source href="Assets/Resources/Images/Lo-Fi CZ3003-04.jpg"></source>
-			<description>Picture of Albert</description>
+			<description>Picture sample</description>
 		</image>
 		<video id="6" rotationX="90" rotationY="180" positionZ="-10" positionX="200" positionY="-150" scaleX="20" scaleZ="20">
 			<source href="Resources/Videos/Video2.ogv"> </source>
-			<description>Video of Albert</description>
+			<description>Video of sample</description>
 		</video>
 		<text id="7" fontSize="20" positionX="-300" positionY="200">
 			<content>This is page 1</content>
@@ -100,7 +100,7 @@
 	<page>
 		<image id="0" scaleX="0.3" scaleY="0.3" scaleZ="0.3" positionY="-150" positionX="-200">
 			<source href="Assets/Resources/Images/Image1.jpg"></source>
-			<description>Picture of Albert</description>
+			<description>Picture of View</description>
 		</image>
 		<model id="1" scaleX="4000" scaleY="4000" scaleZ="4000" positionX="200">
 			<source href="Models/Glass"></source>
@@ -112,7 +112,7 @@
 		</model>
 		<video id="3" rotationX="90" rotationY="180" positionZ="-10" positionY="100" scaleX="20" scaleZ="20">
 			<source href="Resources/Videos/Yee.ogv"> </source>
-			<description>Video of Albert</description>
+			<description>Video of sample</description>
 		</video>
 		<text id="6" fontSize="20" positionX="-300" positionY="200">
 			<content>This is page 2</content>
@@ -120,19 +120,18 @@
 	</page>
 	<page>
 		<text id="0" positionX="-250" positionY="150">
-			<content>Hello my name is Albert</content>
+			<content>This is a bin</content>
 		</text>
 		<text id="1" font="DIN RegularAlternate" fontStyle="Regular" fontSize="8" lineSpace="15" positionX="-250" positionY="100">
 			<content>
-		    Hello my name is Keefe.
-		    I am currently studying Computer Science.
+		    Hello my name is Huang Zhe.
+		    I am currently studying in School of Computer Science.
 		    </content>
 		</text>
 		<text id="2" positionX="-250" positionY="50">
 			<content>
-			Working on this URECA project.
-			Someone said they lived together,
-			I ran out the door to get her.
+			This is a sample content.
+			This is the second line
 			</content>
 		</text>
 		<text id="3" font="DIN RegularAlternate" fontStyle="Regular" fontSize="8" lineSpace="15" positionX="-150">

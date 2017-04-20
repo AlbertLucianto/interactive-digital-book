@@ -71,8 +71,8 @@ public class VoiceGestureController : MonoBehaviour {
 			if(onlyIndexFingerExtend(hands[0]) && onlyIndexFingerExtend(hands[1]))
 			{
 				float twoIndexFingersDistance = getIndexFinger (hands [0]).TipPosition.DistanceTo (getIndexFinger (hands [1]).TipPosition);
-				Debug.Log ("distance:" + twoIndexFingersDistance);
-				Debug.Log (twoIndexFingersDistance);
+				//Debug.Log ("distance:" + twoIndexFingersDistance);
+				//Debug.Log (twoIndexFingersDistance);
 				if(twoIndexFingersDistance < indexFingersThreshold)
 				{
 					Debug.Log ("start recording");

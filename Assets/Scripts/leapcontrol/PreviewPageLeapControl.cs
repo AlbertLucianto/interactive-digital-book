@@ -66,13 +66,13 @@ public class PreviewPageLeapControl : MonoBehaviour {
 				SwipeGesture swipe = new SwipeGesture (g);
 				if(swipe.Direction.x<0)
 				{
-					pageNav.decPageNumAndLoad ();
-					Debug.Log ("left");
+					pageNav.incPageNumAndLoad();
+					Debug.Log ("left gesture, go to next page");
 				}
 				if(swipe.Direction.x > 0)
 				{
-					pageNav.incPageNumAndLoad ();
-					Debug.Log ("right");
+					pageNav.decPageNumAndLoad ();
+					Debug.Log ("right gesture, go to previous page");
 				}
 			}
 		}
